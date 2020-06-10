@@ -7,10 +7,10 @@ MVVM : Model + View + ViewModel
 **Model**: Data + Logic
 
 **View**: What you see (observes publications)
-	- @ObservedObject
-	- @Binding
-	- @EnvironementObject
-	- .onreceive
+- @ObservedObject
+- @Binding
+- @EnvironementObject
+- .onreceive
     
 **ViewModel**: Publishes changes
 	- ObservableObject
