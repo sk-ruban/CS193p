@@ -13,26 +13,30 @@ MVVM : Model + View + ViewModel
 - .onreceive
     
 **ViewModel**: Publishes changes
-	- ObservableObject
-	- @Published
-	- .environementObject()
-	- objectWillChange.send()
+- ObservableObject
+- @Published
+- .environementObject()
+- objectWillChange.send()
 
 ![](Lecture%202%20-%20MVVM%20+%20Swift%20Types/Screenshot%202020-06-11%20at%205.57.37%20AM.png)
+
 View : Reflects the model (Stateless, reactive & declared)
+
 View Model: Interpretor of Model (class - because u wanna share)
 
 ## Types
 ### Struct & Class
 **Similarities**: stored, compted var, lets, funcs, inits
+
 **Differences**:
 ![](Lecture%202%20-%20MVVM%20+%20Swift%20Types/Screenshot%202020-06-11%20at%206.06.30%20AM.png)
 
 **Structs**
-	* copied when passed, init initalises all vars, mutability must be stated
+* copied when passed, init initalises all vars, mutability must be stated
+
 **Classes**
-	* passed by pointers,  init initialises no vars, always mutable
-	* ::Always used for ViewModel::
+* passed by pointers,  init initialises no vars, always mutable
+* ::Always used for ViewModel::
 
 ### Generics
 When you dont care about a type (type agnostic) - Eg. data inside Arrays
@@ -63,9 +67,13 @@ cards = Array<Card>()
 
 ### House Analogy
 Views - living inside house, ViewModel - door, Model - outside world
+
 problem of rogue view manipulating model
+
 private var 	- model can only be accessed by the class (closes the door)
+
 private(set) 	- class can modify the model but View can still see model
+
 Intents 		- funcs that allow Views to access model (intercom buttons)
 
 ### Static Functions
