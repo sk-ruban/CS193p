@@ -3,17 +3,20 @@
 
 ## MVVM
 MVVM : Model + View + ViewModel
+
 **Model**: Data + Logic
+
 **View**: What you see (observes publications)
-	* @ObservedObject
-	* @Binding
-	* @EnvironementObject
-	* .onreceive
+	- @ObservedObject
+	- @Binding
+	- @EnvironementObject
+	- .onreceive
+    
 **ViewModel**: Publishes changes
-	* ObservableObject
-	* @Published
-	* .environementObject()
-	* objectWillChange.send()
+	- ObservableObject
+	- @Published
+	- .environementObject()
+	- objectWillChange.send()
 
 ![](Lecture%202%20-%20MVVM%20+%20Swift%20Types/Screenshot%202020-06-11%20at%205.57.37%20AM.png)
 View : Reflects the model (Stateless, reactive & declared)
