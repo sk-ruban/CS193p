@@ -8,21 +8,22 @@
 
 import SwiftUI
 
+// This is the ViewModel
 
 class EmojiMemoryGame {
     private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
         
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis: Array<String> = ["👻","🎃","🕷"]
-        return MemoryGame<String>(numberOfPairs: emojis.count) { pairIndex in
-            return emojis[pairIndex]
+        let emojis: Array<String> = ["👻","🎃","🕷","🧟‍♂️","🧛🏼‍♀️","☠️","👽","🦹‍♀️","🦇","🌘","⚰️","🔮"].shuffled()
+        return MemoryGame<String>(numberOfPairs: Int.random(in: 2...5)) { index in
+            return emojis[index]
         }
     }
     
     // Mark: Access to the model
     
     var cards: Array<MemoryGame<String>.Card> {
-        model.cards
+        model.cards.shuffled()
     }
     
     // Mark: Intent
@@ -31,3 +32,4 @@ class EmojiMemoryGame {
         model.choose(card: card)
     }
 }
+
