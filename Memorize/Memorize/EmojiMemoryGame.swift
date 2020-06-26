@@ -10,8 +10,8 @@ import SwiftUI
 
 // This is the ViewModel
 
-class EmojiMemoryGame {
-    private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+class EmojiMemoryGame: ObservableObject {
+    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
         
     static func createMemoryGame() -> MemoryGame<String> {
         let emojis: Array<String> = ["👻","🎃","🕷","🧟‍♂️","🧛🏼‍♀️","☠️","👽","🦹‍♀️","🦇","🌘","⚰️","🔮"].shuffled()
@@ -20,10 +20,10 @@ class EmojiMemoryGame {
         }
     }
     
-    // Mark: Access to the model
+    // Mark: Access to the model because its private var
     
     var cards: Array<MemoryGame<String>.Card> {
-        model.cards.shuffled()
+        model.cards
     }
     
     // Mark: Intent
