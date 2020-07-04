@@ -35,6 +35,7 @@
 **Similarities**: Stored, compted var, lets, funcs, inits
 
 **Differences**:
+
 ![Differences](./Lecture.assets/Differences.png)
 
 **Structs**
