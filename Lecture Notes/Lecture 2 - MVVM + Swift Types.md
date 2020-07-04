@@ -1,46 +1,52 @@
 # Lecture 2 - MVVM + Swift Type
-#notes/self-learning/cs193p
-
 ## MVVM
-MVVM : Model + View + ViewModel
+**MVVM** : Model + View + ViewModel
 
-**Model**: Data + Logic
+### Model
 
-**View**: What you see (observes publications)
-- @ObservedObject
-- @Binding
-- @EnvironementObject
-- .onreceive
-    
-**ViewModel**: Publishes changes
-- ObservableObject
-- @Published
-- .environementObject()
-- objectWillChange.send()
+* Data + Logic
 
-![](Lecture%202%20-%20MVVM%20+%20Swift%20Types/Screenshot%202020-06-11%20at%205.57.37%20AM.png)
+### View
 
-View : Reflects the model (Stateless, reactive & declared)
+* Reflects the model (Stateless, reactive & declared)
 
-View Model: Interpretor of Model (class - because u wanna share)
+* What you see (observes publications)
+  * @ObservedObject
+  * @Binding
+  * @EnvironementObject
+  * .onreceive
+
+### ViewModel: 
+
+* Interpretor of Model 
+
+* Publishes changes
+  * ObservableObject
+  * @Published
+  * .environementObject()
+  * objectWillChange.send()
+
+![MVVM](/Users/ruban/Desktop/GitHub/CS193p/Lecture Notes/Lecture.assets/Screenshot 2020-06-11 at 5.57.37 AM.png)
+
+
 
 ## Types
 ### Struct & Class
-**Similarities**: stored, compted var, lets, funcs, inits
+**Similarities**: Stored, compted var, lets, funcs, inits
 
 **Differences**:
-![](Lecture%202%20-%20MVVM%20+%20Swift%20Types/Screenshot%202020-06-11%20at%206.06.30%20AM.png)
+![Differences](/Users/ruban/Desktop/GitHub/CS193p/Lecture Notes/Lecture.assets/Screenshot 2020-06-11 at 6.06.30 AM.png)
 
 **Structs**
-* copied when passed, init initalises all vars, mutability must be stated
+* Copied when passed, init initalises all vars, mutability must be stated
 
 **Classes**
-* passed by pointers,  init initialises no vars, always mutable
-* ::Always used for ViewModel::
+* Passed by pointers,  init initialises no vars, always mutable
+* **Always used for ViewModel**
 
 ### Generics
 When you dont care about a type (type agnostic) - Eg. data inside Arrays
-```
+```swift
 struct Array<Element> {
 	…
 	func append(_ element: Element) { . . . }
@@ -53,7 +59,7 @@ Can have multiple dont care type parameters  Eg. <Element, Foo>
 
 ### Functions
 Are types too!
-```
+```swift
 var foo: (Double) -> Void
 ```
  foo’s type: “function that takes a Double, returns nothing”
@@ -61,7 +67,7 @@ var foo: (Double) -> Void
 ## Demo 
 Opt-click for documentation
 Empty Array:
-```
+```swift
 cards = Array<Card>()
 ```
 
@@ -77,7 +83,7 @@ private(set) 	- class can modify the model but View can still see model
 Intents 		- funcs that allow Views to access model (intercom buttons)
 
 ### Static Functions
-```
+```swift
 class AppUtils {
     static func appUtility() {
     }
@@ -89,13 +95,13 @@ Dont need instance. Access static func as `AppUtils.appUtility()`
 Like static functions but can be overwritten by subclasses.
 
 ### Closures
-```
+```swift
 private var model: MemoryGame<String> = MemoryGame<String>(numberOfPairs: 2, cardContentFactory: { (pairIndex: Int) -> String in
         return “😋”
     })
 ```
 can become:
-```
+```swift
 private var model: MemoryGame<String> = MemoryGame<String>(numberOfPairs: 2) { _ in “😋” }
 ```
 
