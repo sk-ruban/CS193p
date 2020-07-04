@@ -26,7 +26,7 @@
   * .environementObject()
   * objectWillChange.send()
 
-![MVVM](/Users/ruban/Desktop/GitHub/CS193p/Lecture Notes/Lecture.assets/Screenshot 2020-06-11 at 5.57.37 AM.png)
+![MVVM](./Lecture.assets/Screenshot 2020-06-11 at 5.57.37 AM.png)
 
 
 
@@ -35,7 +35,7 @@
 **Similarities**: Stored, compted var, lets, funcs, inits
 
 **Differences**:
-![Differences](/Users/ruban/Desktop/GitHub/CS193p/Lecture Notes/Lecture.assets/Screenshot 2020-06-11 at 6.06.30 AM.png)
+![Differences](./Lecture.assets/Screenshot 2020-06-11 at 6.06.30 AM.png)
 
 **Structs**
 * Copied when passed, init initalises all vars, mutability must be stated
