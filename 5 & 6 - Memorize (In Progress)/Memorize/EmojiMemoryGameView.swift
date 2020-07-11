@@ -18,7 +18,9 @@ struct EmojiMemoryGameView: View {
             VStack {
                 Grid(viewModel.cards) { card in
                     CardView(card: card).onTapGesture {
+                        withAnimation(.linear(duration: 0.7)){
                             self.viewModel.choose(card: card)
+                        }
                     }
                     .padding(5)
                     
@@ -30,7 +32,10 @@ struct EmojiMemoryGameView: View {
             }
             .navigationBarTitle(viewModel.theme.name)
             .navigationBarItems(trailing: Button("New Game"){
-                self.viewModel.newGame() })
+                withAnimation(.easeInOut){
+                    self.viewModel.newGame()
+                }
+            })
         }
         // To allow for rotation
         .navigationViewStyle(StackNavigationViewStyle())
@@ -55,8 +60,11 @@ struct CardView: View {
                     .opacity(0.4)
                 Text(card.content)
                     .font(Font.system(size: fontSize(for: size)))
+                    .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)
+            .transition(AnyTransition.scale)
         }
     }
     
