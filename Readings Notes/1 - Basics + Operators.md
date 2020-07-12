@@ -45,16 +45,21 @@ if let actualNumber = Int(possibleNumber) {
 
 ### Error Handling
 
+* Use **throws** if a function can fail
+
 ```swift
 func canThrowAnError() throws { 
 	// this function may or may not throw an error 
 }
+
 // later....
 do { 
 	try canThrowAnError() 
 	// no error was thrown 
 } catch { 
-	// an error was thrown 
+	// 1st error was thrown 
+} catch { 
+	// 2nd error was thrown 
 } 
 ```
 

@@ -5,7 +5,12 @@
 * **.count** - count characters
 * .hasSuffix & .hasPrefix - checks whether String ends/starts with another String
 
+
+
+## String Literals
+
 ### Multi Line Strings
+
 ```swift
 let quotation = """
 The White Rabbit put on his spectacles.  "Where shall I begin,
@@ -23,12 +28,16 @@ let sparklingHeart = "\u{1F496}" // 💖, Unicode scalar U+1F496
 ```
 
 ### Initialising 
+
 ```swift
 var emptyString = ""               // empty string literal
 var anotherEmptyString = String()
 ```
 
-### Characters
+
+
+## Characters
+
 * Is a **type** 
 * Can append to String but cannot be appended (Must be singular)
 ```swift
@@ -37,18 +46,29 @@ let catString = String(catCharacters)
 print(catString) 
 ```
 
-### String Interpolation
+
+
+## String Interpolation
+
 ```swift
 #"\(…)”#  // Removes the string interpolation
 ```
 
+
+
+## Unicode
+
 ### Graphemes
+
 * é = u{E9} = u{65}u{301} = e + ‘
 
-### String Indices
-* String.Index corresponds to position of each Character
+
+
+## String Indices
+
+* **String.Index** corresponds to position of each Character
 * **startIndex**: First Character
-* **endIndex**: ( Last Character + 1 ) -> not valid, used to place things
+* **endIndex**: ( Last Character + 1 ) -> just `endIndex` is not valid, used to place things
 
 ```swift
 var welcome = "hello" 
@@ -59,6 +79,9 @@ welcome.insert("!", at: welcome.endIndex)
 welcome.remove(at: welcome.index(before: welcome.endIndex))
 ```
 
-### Substring
+
+
+## Substring
 
 * If you use a method on a string, you get a **substring** ->  reuses memory of original string
+* Can only use for a short amount of time, so convert to a String

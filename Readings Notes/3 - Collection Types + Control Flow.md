@@ -3,7 +3,10 @@
 * **Sets** - Unordered Collection of **unique** values
 * **Dictionaries** - key value pairs
 
+
+
 ## Arrays
+
 * `Array<Element>`  or  `[Element]`
 * To init array  `var someInts = [Int]()`
 
@@ -27,7 +30,10 @@ for (index, value) in shoppingList.enumerated() {
 } 
 ```
 
+
+
 ## Sets
+
 * Use instead of Array when **order of items not important** or **item only appears once**
 * Type must be **hashable** to be stored in Set
 * `Set<Element>`
@@ -44,7 +50,7 @@ removedGenre = favoriteGenres.remove("Rock") // returns "Rock" + removes
 favoriteGenres.contains("Funk")  // returns Boolean (false)
 ```
 
-![Sets](../Notes/Notes.assets/Screenshot 2020-06-13 at 9.02.25 PM.png)
+![Sets](./Notes.assets/sets.png)
 
 ```swift
 houseAnimals.isSubset(of: farmAnimals)   // returns Booleans
@@ -52,7 +58,10 @@ farmAnimals.isSuperset(of: houseAnimals)
 farmAnimals.isDisjoint(with: cityAnimals) 
 ```
 
+
+
 ## Dictionaries
+
 * The order you insert items into Dict isn't the order they are iterated.
 ```swift
 var namesOfIntegers = [Int: String]()
@@ -95,7 +104,10 @@ for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
     // render every 5 minutes) }
 ```
 
+
+
 ## While Loops
+
 ```swift
 // Same as for loops
 repeat { 
@@ -103,7 +115,10 @@ repeat {
 } while condition 
 ```
 
+
+
 ## Switch
+
 * Alternative to if statements
 * No Fallthrough - finishes execution after matching first case
 * To match 2 cases, combine using a ','
@@ -168,6 +183,8 @@ case let (x, y):
 } 
 ```
 
+
+
 ## Control Transfer Statements
 
 ### Continue
@@ -211,5 +228,19 @@ gameLoop: while square != finalSquare {
 guard let name = person["name"] else { 
 		return 
 } 
+```
+
+
+
+## Checking API Availability
+
+* Use **#available** to check whether API can be used on target
+
+```swift
+if #available(iOS 10, macOS 10.12, *) {
+    // Use iOS 10 APIs on iOS, and use macOS 10.12 APIs on macOS
+} else {
+    // Fall back to earlier iOS and macOS APIs
+}
 ```
 
