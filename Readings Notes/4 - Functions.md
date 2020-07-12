@@ -1,5 +1,8 @@
-## Functions
+# Functions
+## Return Values
+
 ### Multiple return values
+
 ```swift
 func minMax(array: [Int]) -> (min: Int, max: Int) {
     var currentMin = array[0]
@@ -13,23 +16,32 @@ func minMax(array: [Int]) -> (min: Int, max: Int) {
     }
     return (currentMin, currentMax)
 }
+
+let bounds = minMax(array: [8, -6, 2, 109, 3, 71])
+print("min is \(bounds.min) and max is \(bounds.max)")
+// Prints "min is -6 and max is 109"
 ```
 
 ### Optional Tuple Return
-* if the return tuple type has potential to have no value
+* If the return tuple type has potential to have `nil`
 ```swift
 func minMax(array: [Int]) -> (min: Int, max: Int)? {
 ```
 
 ### Implicit Return
-* If the body of func is a single expression, return not needed
+* If the body of func is a single expression, `return` not needed
 ```swift
 func greeting(for person: String) -> String { 
-"Hello, " + person + "!" 
+		"Hello, " + person + "!" 
 } 
 ```
 
+
+
+## Argument Labels
+
 ### Omitting Argument Labels + Default Values
+
 ```swift
 func someFunction(_ firstParameterName: Int // Omitted Label
                   , secondParameterName: Int = 12 // Default Value
@@ -52,8 +64,8 @@ arithmeticMean(1, 2, 3, 4, 5)
 ```
 
 ### In-Out Parameters
-* Since Func parametes are constants, need **inout** to modify them.
-* Names prefixed with ‘&’
+* Since Func parameters are **constants**, need `inout` to modify them.
+* Parameter names prefixed with `&`
 ```swift
 func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
@@ -63,6 +75,10 @@ func swapTwoInts(_ a: inout Int, _ b: inout Int) {
 swapTwoInts(&someInt, &anotherInt)
 ```
 
-### Function Types
-* `func printHelloWorld() {`  has type **() -> Void**
+
+
+## Function Types
+
+* `func printHelloWorld() {...}`  has type **() -> Void**
 * Swift can infer types when passing into var / let
+

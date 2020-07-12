@@ -1,8 +1,12 @@
 # Closures
-* Closures can capture and store references to any constants and variables from the context in which they are defined
+* Closures can **capture and store references** to any constants and variables from the **context in which they are defined**
 * Global & nested funcs are special case closures
+* **Reference** Type
+
+
 
 ## Closure Syntax
+
 ```swift
 // Parameters can't have a default value
 { (parameters) -> return_type in 
@@ -35,7 +39,7 @@ reversedNames = names.sorted(by: { s1, s2 in s1 > s2 } )
 // Shorthand Argument 
 reversedNames = names.sorted(by: { $0 > $1 } )
 
-//Operator Method
+// Operator Method
 reversedNames = names.sorted(by: >)
 ```
 
@@ -43,16 +47,15 @@ reversedNames = names.sorted(by: >)
 
 ## Trailling Closures
 
-* Trailing closure is still an argument to the function
-* When closure is long and can't be written inline
+* When a closure expression is the function's final argument & long
 
 ```swift
-// Function
+// As a Function:
 func someFunctionThatTakesAClosure(closure: () -> Void) {
     // function body goes here
 }
 
-// As Closure:
+// As a Closure:
 someFunctionThatTakesAClosure(closure: {
     // closure's body goes here
 })
@@ -91,4 +94,11 @@ incrementByTen()
 ## Escaping Closures
 
 * A closure is said to _escape_ a function when the closure is passed as an argument to the function, but is **called after the function returns**
+* Use `@escaping` before the parameter type
 * Used for Asyn ops where you need to call the closure only after ops is complete
+
+
+
+## Autoclosures
+
+* Doesn't take any arguments & returns the value of the expression inside

@@ -56,8 +56,9 @@ var volume: Double { width * height * depth }
 ## Property Observers
 
 * Observe and respond to changes in property values
-* **willSet** - called before value stored (default name - **newValue**)
-* **didSet** - called after value stored (default name - **oldValue**)
+* Like `@State` in SwiftUI
+* `willSet` - called before value stored (default name - **newValue**)
+* `didSet` - called after value stored (default name - **oldValue**)
 ```swift
 class StepCounter {
     var totalSteps: Int = 0 {
@@ -84,7 +85,8 @@ stepCounter.totalSteps = 360
 
 ## Property Wrapper
 
-* Write management code once and reuse by applying to multiple properties
+* Write management code once and **reuse** by applying to multiple properties
+* Defines a `wrappedValue` property
 ```swift
 // Ensures that value <13
 @propertyWrapper                    
