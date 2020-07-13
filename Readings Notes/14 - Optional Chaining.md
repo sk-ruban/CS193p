@@ -1,35 +1,40 @@
 # Optional Chaining
-* Process for querying and calling properties, methods, and subscripts on an optional that might be nil
+* Process for querying and **calling** properties, methods, and subscripts on an optional that **might be nil**
 * Succeeds else returns `nil`
 * Optional Chaining **fails gracefully** compared to force unwrapping
-  * Force unwrapping triggers runtime error
+  * Force unwrapping **triggers runtime error**
   * In OC, property that normally returns an `Int` will return an `Int? `
 
-### Accessing Properties 
+
+
+## Accessing Properties 
 
 * If Property has ?, must define it before accessing
 
 ```swift
 class Address {
-    var buildingName: String?
     var buildingNumber: String?
 }
 
 let someAddress = Address()
 someAddress.buildingNumber = "29"
-someAddress.street = "Acacia Road"
 ```
 
-### Accessing Subscripts
+
+
+## Accessing Subscripts
 
 ```swift
 var testScores = ["Dave": [86, 82, 84], "Bev": [79, 94, 81]]
 testScores["Dave"]?[0] = 91  // Checks whether subscript exists
 testScores["Bev"]?[0] += 1
-testScores["Brian"]?[0] = 72 // Doesnt work
+testScores["Brian"]?[0] = 72 // Doesn't work
 ```
 
-### Multiple Level of Chaining
+
+
+## Multiple Level of Chaining
+
 *  Fails at weakest point
 *  If the type you are trying to retrieve is not optional, it will become optional because of OC
 
