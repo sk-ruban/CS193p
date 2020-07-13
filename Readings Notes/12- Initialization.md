@@ -1,6 +1,9 @@
 # Initialization
 * _Initialization_ is the process of preparing an instance of a class, struct, or enum for use
+
 * Sets an initial value for each stored property
+
+  
 
 ## Setting Initial Values
 * Can either use **init()** or **Default Prop Value** (ie. var temp = 32.0)
@@ -43,7 +46,7 @@ let bodyTemperature = Celsius(37.0)
 ```
 
 ### Optional Property Types
-* use optionals if property not necessary  `var response: String?`
+* use optionals if not necessary for property to be set `var response: String?`
 
   
 
@@ -73,10 +76,13 @@ struct Rect {
     }
 }
 
-let basicRect = Rect()		// Default init
+let basicRect = Rect()																// Default init
+
 let originRect = Rect(origin: Point(x: 2.0, y: 2.0),	// Custom init
                       size: Size(width: 5.0, height: 5.0))
 
+let centerRect = Rect(center: Point(x: 4.0, y: 4.0),  // Delegated init
+                      size: Size(width: 3.0, height: 3.0))
 ```
 
 
@@ -91,9 +97,10 @@ let originRect = Rect(origin: Point(x: 2.0, y: 2.0),	// Custom init
   * Usually class have 1 Designated init
   * Written same way as normal inits
 * *Convenience*: **Seconday** init, supporting Init, for same class (**delegate across**)
-  * **convenience** modidifier before init
+  * `convenience` modifier before init
   * Ultimately calls a designated init
-```
+  * Use when there is a default value for a property
+```swift
 class Food {
     var name: String
 	  // Designated init
@@ -103,8 +110,9 @@ class Food {
 }
 ```
 
-![](Screenshot%202020-06-17%20at%202.56.00%20PM.png)
-```
+![Convenience Inits](./Notes.assets/convenience_inits.png)
+
+```swift
 class RecipeIngredient: Food {
     var quantity: Int
     init(name: String, quantity: Int) {
@@ -128,10 +136,10 @@ class ShoppingListItem: RecipeIngredient {
 ShoppingListItem(name: "Bacon")
 ```
 
-![](Screenshot%202020-06-17%20at%203.03.25%20PM.png)
+![Initializer Chain](./Notes.assets/initializer_chain.png)
 
 ### Init Inheritance + Overriding
-```
+```swift
 class Vehicle {
     var numberOfWheels = 0
     var description: String {
@@ -162,11 +170,11 @@ class Hoverboard: Vehicle {
 
 ## Failable Inits
 
-* To cope with init conditions that can fail `init?`
+* To cope with init conditions that can fail `init?` - creates an Optional Value Type
 * Can use for enum switch cases too (if rawValue auto receives failable init)
-```
+```swift
 struct Animal {
-    let species: String
+    let species: String   // No '?' yet Optional Type will be created
     init?(species: String) {
         if species.isEmpty { return nil }
         self.species = species
@@ -185,8 +193,9 @@ if anonymousCreature == nil {
 
 ## Required Inits
 
-* Indicates every subclass must implement that init (write required for both classes)
-```
+* Indicates every **subclass must implement** that init 
+* Use `required` for both classes
+```swift
 class SomeClass {
     required init() {
         // initializer implementation goes here
@@ -204,6 +213,17 @@ class SomeSubclass: SomeClass {
 ## Setting a Default Property Value with Closure / Function
 
 * If stored prop default value requires some customization or setup, you can use a  closure or global function to provide a customized default value for  that prop
+
+```swift
+class SomeClass {
+    let someProperty: SomeType = {
+        // create a default value for someProperty inside this closure
+        // someValue must be of the same type as SomeType
+        return someValue
+    }()
+}
+```
+
 * Parentheses () after tells swift to execute the closure immediately
 
 ```swift
