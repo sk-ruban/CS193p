@@ -1,5 +1,8 @@
 # Extensions
-* Add **new functionality** to **existing** types / structs / classes + adapt protocols
+* Add **new functionality** to **existing** types / structs / classes + **adapt protocols**
+
+
+
 ## Extension Syntax
 
 ```swift
@@ -115,6 +118,16 @@ extension Int {
     enum Kind {
         case negative, zero, positive
     }
+  	var kind: Kind {
+    		switch self {
+    		case 0:
+        		return .zero
+    		case let x where x > 0:
+        		return .positive
+    		default:
+        		return .negative
+    }
+	}
 }
 
 var number = 5 // Can access number.kind
