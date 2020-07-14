@@ -1,11 +1,11 @@
 # Generics
-* Enables you to write flexible, reusable functions and types that can work with any type, subject to your defined requirements
+* Enables you to write flexible, reusable functions and types **that can work with any type**, subject to your defined requirements
 
 
 
 ## Generic Functions
 
-* Placeholder type: T  -  **Type Parameter**
+* Placeholder type: `T`  -  **Type Parameter**
 ```swift
 func swapTwoInts(_ a: inout Int, _ b: inout Int){ ..  // Normal
 func swapTwoValues<T>(_ a: inout T, _ b: inout T){ .. // Generic
@@ -41,6 +41,7 @@ stackOfStrings.push("uno")
 
 ```swift
 extension Stack {
+  	// returns the Top Item in the Stack
     var topItem: Element? { return items.isEmpty ? nil : items[items.count - 1] }
 }
 ```
@@ -84,12 +85,13 @@ protocol Container {
 struct IntStack: Container {
     var items = [Int]()
 	  typealias Item = Int // Turns abstract Item to Int
-	  ...
+	  // ...
+}
 ```
 
 
 
-## Where Clauses
+## Generic Where Clauses
 
 * Require that an  AT / Extension / Method conforms to a certain protocol / Type
 ```swift
@@ -104,7 +106,7 @@ extension Stack where Element: Equatable {
 }
 
 // For Methods
-func average() -> Double where Item == Int {
+func average() -> Double where Item == Int {  // Can use == rather than :
 ... }
 
 // For AT

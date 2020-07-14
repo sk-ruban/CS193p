@@ -37,8 +37,8 @@ let john = Person(fullName: "John Appleseed")
 
 
 
-## Method Requirements
-* to **modify** struct and enum **instances**, conforming to protocols, use **mutating**
+## Mutating Method Requirements
+* to **modify** struct and enum **instances**, conforming to protocols, use `mutating`
 ```swift
 protocol Togglable {
     mutating func toggle()
@@ -64,7 +64,7 @@ lightSwitch.toggle()
 
 ## Initializer Requirements
 
-* **required** to implement inherited init requirements
+* `required` to implement inherited init requirements for all subclasses
 
 ```swift
 protocol SomeProtocol {
@@ -78,14 +78,14 @@ class SomeClass: SomeProtocol {
 }
 ```
 
-* **required override** for subclass to override superclass
+* `required override` for subclass to override superclass
 
 
 
 ## Protocol as Types
 
-* Can use protocols as fully fledged types
-* Can also store as collection in Arrays / Dicts
+* Can use protocols as fully fledged types (existential types)
+* Can also store in a collection as in Arrays / Dicts
 ```swift
 protocol RandomNumberGenerator {
     func random() -> Double
@@ -93,9 +93,10 @@ protocol RandomNumberGenerator {
 
 class Dice {
     let sides: Int
-    let generator: RandomNumberGenerator // Call any type that conforms to Protocol
-    	...
-  	return generator.random()
+    let generator: RandomNumberGenerator // Of Type RandomNumberGenerator
+    init(sides: Int, generator: RandomNumberGenerator){
+      //...
+    }
 }
 
 let things: [TextRepresentable] = [game, d12, simonTheHamster]
@@ -103,16 +104,16 @@ let things: [TextRepresentable] = [game, d12, simonTheHamster]
 
 
 
-## Delegation (?)
+## Delegation
 
 * Enables a class / structure to hand off (or _delegate_) some of its responsibilities to an instance of another type.
-* Mark delegates as **weak var**
+* Mark delegates as `weak var`
 
 
 
 ## Protocols for Extensions
 
-* Allow exisiting type to conform to a new protocol using an extension
+* Allow **exisiting type** to **conform to a new protocol** using an extension
 
 ```swift
 protocol TextRepresentable {
@@ -127,10 +128,10 @@ extension Dice: TextRepresentable {
 ```
 
 ### Conditional Conformance
-* To satisfy the requirements of a protocol only under certain conditions
-* Use **where** clause
+* To satisfy the requirements of a protocol only **under certain conditions**
+* Use `where` clause
 ```swift
-// Array instance only conform when Element does
+// Array instance only conforms when Element does
 extension Array: TextRepresentable where Element: TextRepresentable { 
 	...
 } 
@@ -141,7 +142,7 @@ extension Array: TextRepresentable where Element: TextRepresentable {
 ## Synthesized Implementation
 
 *  **Equatable** -  equate 2 struct instances
-* **Comparable** - compare struct instances
+* **Comparable** - compare between struct instances
 * **Hashable** - ???
 
 
@@ -158,9 +159,9 @@ protocol InheritingProtocol: SomeProtocol, AnotherProtocol {
 
 
 
-## Class Only Protocol
+## Class-Only Protocols
 
-* To limit protocol adoption to only class types; use **AnyObject**
+* To limit protocol adoption to **only class types**; use `AnyObject`
 ```swift
 protocol SomeClassOnlyProtocol: AnyObject {
     // class-only protocol definition goes here
@@ -171,7 +172,7 @@ protocol SomeClassOnlyProtocol: AnyObject {
 
 ## Protocol Composition 
 
-* To provide requirements for a function
+* Combine multiple protocols into a single protocol composition requirement
 
 ```swift
 protocol Named {
@@ -195,9 +196,30 @@ wishHappyBirthday(to: birthdayPerson)
 
 
 
+## Checking for Protocol Conformance
+
+* Use `as` and `is` to check for protocol confromance
+
+```swift
+protocol HasArea {
+    var area: Double { get }
+}
+
+for object in objects {
+  	// checks whether object confroms to HasArea Protocol
+    if let objectWithArea = object as? HasArea {
+        print("Area is \(objectWithArea.area)")
+    } else {
+        print("Something that doesn't have an area")
+    }
+}
+```
+
+
+
 ## Optional Protocol Requirements
 
-* For optional requirements
+* For optional requirements, use `optional` prefix
 
 ```swift
 // Object C Protocol
@@ -221,4 +243,3 @@ extension RandomNumberGenerator {
     }
 }
 ```
-
