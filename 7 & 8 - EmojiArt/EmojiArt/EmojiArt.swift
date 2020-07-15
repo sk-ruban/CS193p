@@ -7,7 +7,7 @@
 //
 
 import Foundation
-// No need Swift UI
+// Don't need Swift UI
 // Model
 
 struct EmojiArt {
@@ -16,8 +16,8 @@ struct EmojiArt {
     
     struct Emoji: Identifiable {
         let text: String
-        var x: Int
-        var y: Int
+        var x: Int      // Offset from the centre
+        var y: Int      // Offset from the centre
         var size: Int
         let id: Int
         
