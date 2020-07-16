@@ -36,7 +36,7 @@
   * .environementObject()
   * objectWillChange.send()
 
-![MVVM](/Users/ruban/Desktop/GitHub/CS193p/1 & 2 - Memorize/Lecture.assets/MVVM.png)
+![MVVM](./Lecture.assets/MVVM.png)
 
 
 
@@ -48,7 +48,7 @@
 
 **Differences**:
 
-![Differences](/Users/ruban/Desktop/GitHub/CS193p/1 & 2 - Memorize/Lecture.assets/Differences.png)
+![Differences](./Lecture.assets/Differences.png)
 
 **Structs**
 
