@@ -2,7 +2,7 @@
 
 ### Task 3 - 4: New Themes
 
-Added 6 new themes with a new Themes.swift file
+* Added 6 new themes with a new Themes.swift file
 
 ```swift
 // Themes.swift
@@ -71,13 +71,15 @@ NavigationView{
 
 ### Task 8: Score Tracking
 
-Add a new var to `Card	` to check whether the card has been flipped before & a `score` to track the score
+* Add a new var to `Card	` to check whether the card has been flipped before & a `score` to track the score
 
-Thereafter, check for the 3 cases:
+* Thereafter, check for the 3 cases:
 
-1. **Both cards match** - Add 2 points
-2. **Mismatch** - Deduct 1 Point
-3. **Only 1 card face up** - Nothing
+  1. **Both cards match** - Add 2 points
+
+  2. **Mismatch** - Deduct 1 Point
+
+  3. **Only 1 card face up** - Nothing
 
 ```swift
 // Model
@@ -124,7 +126,7 @@ Text("Score: \(viewModel.score)")
 
 ### Task 10: Orientations
 
-For the app to display properly in Landscape Mode on large screen devices.
+* For the app to display properly in Landscape Mode on large screen devices.
 
 ```swift
 // View

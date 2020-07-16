@@ -62,9 +62,9 @@
 			children = (
 				47EA5D26248FDC0700AC8C3D /* AppDelegate.swift */,
 				47EA5D28248FDC0700AC8C3D /* SceneDelegate.swift */,
-				47EA5D2A248FDC0700AC8C3D /* ContentView.swift */,
-				47EA5D3C24904BC600AC8C3D /* EmojiMemoryGame.swift */,
 				47EA5D3A248FFAD500AC8C3D /* MemoryGame.swift */,
+				47EA5D3C24904BC600AC8C3D /* EmojiMemoryGame.swift */,
+				47EA5D2A248FDC0700AC8C3D /* ContentView.swift */,
 				47EA5D2C248FDC0B00AC8C3D /* Assets.xcassets */,
 				47EA5D31248FDC0B00AC8C3D /* LaunchScreen.storyboard */,
 				47EA5D34248FDC0B00AC8C3D /* Info.plist */,
