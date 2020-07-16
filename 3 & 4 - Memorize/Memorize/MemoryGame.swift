@@ -25,22 +25,24 @@ struct MemoryGame<CardContent> where CardContent: Equatable {
     
     mutating func choose(card: Card){
         print("Card Chosen: \(card)")
+        // chosenIndex is the Index of the card chosen, which is still Face Down and isn't Matched
         if let chosenIndex: Int = cards.firstIndex(matching: card), !cards[chosenIndex].isFaceUp, !cards[chosenIndex].isMatched {
+            // potential Match Index checks for the match of chosenIndex
             if let potentialMatchIndex = indexOfTheOneAndOnlyFaceUpCard {
                 cards[chosenIndex].hasBeenFlipped += 1
                 cards[potentialMatchIndex].hasBeenFlipped += 1
+                // Match Case
                 if cards[chosenIndex].content == cards[potentialMatchIndex].content {
-                     // Match Case
                     cards[chosenIndex].isMatched = true
                     cards[potentialMatchIndex].isMatched = true
                     score += 2
+                // Mismatch Case after card has been seen before
                 } else if cards[chosenIndex].hasBeenFlipped > 1 || cards[potentialMatchIndex].hasBeenFlipped > 1{
-                    // Mismatch Case
                     score -= 1
                 }
                 self.cards[chosenIndex].isFaceUp = true
             } else {
-                // 1 Face up Card
+                // First time seeing a card
                 indexOfTheOneAndOnlyFaceUpCard = chosenIndex
             }
         }

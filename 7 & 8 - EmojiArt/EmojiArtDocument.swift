@@ -15,14 +15,26 @@ class EmojiArtDocument: ObservableObject {
     
     static var palette: String = "🥕🥥🥝🏓🔥🦀🌴"
     
-    @Published private var emojiArt: EmojiArt = EmojiArt()
+    @Published private var emojiArt: EmojiArt {
+        // Watches for changes and stores to UserDefaults
+        didSet {
+            UserDefaults.standard.set(emojiArt.json, forKey: EmojiArtDocument.untitled)
+        }
+    }
     
-    // Published because you want to watch for changes
+    private static let untitled = "EmojiArtDocument.Untitled"
+    
+    init() {
+        emojiArt = EmojiArt(json: UserDefaults.standard.data(forKey: EmojiArtDocument.untitled)) ?? EmojiArt()
+        fetchBackgroundImageData()
+    }
+    
+    // Published because you want to publish changes to View
     @Published private(set) var backgroundImage: UIImage?
     
     var emojis: [EmojiArt.Emoji] { emojiArt.emojis }
     
-    // MARK: - Intents(s)
+    // MARK: - Intents
     
     func addEmoji(_ emoji: String, at location: CGPoint, size: CGFloat) {
         emojiArt.addEmoji(emoji, x: Int(location.x), y: Int(location.y), size: Int(size))
@@ -66,6 +78,7 @@ class EmojiArtDocument: ObservableObject {
     }
 }
 
+// Why is Extension here???
 extension EmojiArt.Emoji {
     var fontSize: CGFloat { CGFloat(self.size) }
     var location: CGPoint { CGPoint(x: CGFloat(x), y: CGFloat(y))}

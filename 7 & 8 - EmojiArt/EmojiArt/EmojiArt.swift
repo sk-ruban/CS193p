@@ -7,14 +7,15 @@
 //
 
 import Foundation
-// Don't need Swift UI
+// Don't need Swift UI for Model
 // Model
 
-struct EmojiArt {
+struct EmojiArt: Codable {
     var backgroundURL: URL?
     var emojis = [Emoji]()
     
-    struct Emoji: Identifiable {
+    // When using Codable protocol, all members must be codable
+    struct Emoji: Identifiable, Codable {
         let text: String
         var x: Int      // Offset from the centre
         var y: Int      // Offset from the centre
@@ -30,6 +31,22 @@ struct EmojiArt {
             self.id = id
         }
     }
+    
+    var json: Data? {
+        return try? JSONEncoder().encode(self)
+    }
+    
+    // Failable init
+    init?(json: Data?) {
+        // if there is JSON, we get a newEmojiArt
+        if json != nil, let newEmojiArt = try? JSONDecoder().decode(EmojiArt.self, from: json!){
+            self = newEmojiArt
+        } else {
+            return nil
+        }
+    }
+    
+    init () { }
     
     private var uniqueEmojiId = 0
     

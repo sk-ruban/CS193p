@@ -62,10 +62,10 @@
 		47A4882A24BD972E00D81455 /* EmojiArt */ = {
 			isa = PBXGroup;
 			children = (
-				47A4884324BDA68E00D81455 /* EmojiArtExtensions.swift */,
 				47A4884124BDA29500D81455 /* EmojiArt.swift */,
 				47A4883F24BD9CD700D81455 /* EmojiArtDocument.swift */,
 				47A4882F24BD972E00D81455 /* EmojiArtDocumentView.swift */,
+				47A4884324BDA68E00D81455 /* EmojiArtExtensions.swift */,
 				47A4882B24BD972E00D81455 /* AppDelegate.swift */,
 				47A4882D24BD972E00D81455 /* SceneDelegate.swift */,
 				47A4883124BD973400D81455 /* Assets.xcassets */,

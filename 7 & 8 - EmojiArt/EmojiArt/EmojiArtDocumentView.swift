@@ -24,9 +24,9 @@ struct EmojiArtDocumentView: View {
             }
             .padding(.horizontal)
             GeometryReader { geometry in
-                // Use Overlay to size Image over the Rectangle
                 ZStack {
                     Color.white.overlay(
+                            // With Group don't need a View for the else case
                             Group {
                                 if self.document.backgroundImage != nil {
                                     Image(uiImage: self.document.backgroundImage!)
@@ -35,7 +35,7 @@ struct EmojiArtDocumentView: View {
                         .edgesIgnoringSafeArea([.horizontal, .bottom])
                         // For Drag & Drop Image
                         .onDrop(of: ["public.image", "public.text"], isTargeted: nil) { providers, location in
-                            // Convert iPad Coordinates to Rectangle Coord
+                            // Convert iPad Coords to Centre Coords
                             var location = geometry.convert(location, from: .global)
                             location =  CGPoint(
                                 x: location.x - geometry.size.width/2,
