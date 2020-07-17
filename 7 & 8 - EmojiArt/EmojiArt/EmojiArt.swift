@@ -15,7 +15,7 @@ struct EmojiArt: Codable {
     var emojis = [Emoji]()
     
     // When using Codable protocol, all members must be codable
-    struct Emoji: Identifiable, Codable {
+    struct Emoji: Identifiable, Codable, Hashable {
         let text: String
         var x: Int      // Offset from the centre
         var y: Int      // Offset from the centre
