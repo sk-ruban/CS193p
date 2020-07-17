@@ -18,6 +18,7 @@ struct EmojiMemoryGameView: View {
             VStack {
                 Grid(viewModel.cards) { card in
                     CardView(card: card).onTapGesture {
+                        // Explicit for ViewModel Intents
                         withAnimation(.linear(duration: 0.7)){
                             self.viewModel.choose(card: card)
                         }
@@ -60,6 +61,7 @@ struct CardView: View {
         }
     }
     
+    // function @ViewBuilder
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {

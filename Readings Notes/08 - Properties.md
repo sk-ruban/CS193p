@@ -57,8 +57,8 @@ var volume: Double { width * height * depth }
 
 * Observe and respond to changes in property values
 * Like `@State` in SwiftUI
-* `willSet` - called before value stored (default name - **newValue**)
-* `didSet` - called after value stored (default name - **oldValue**)
+* `willSet` - called before value changed (default name - **newValue**)
+* `didSet` - called after value changed (default name - **oldValue**)
 ```swift
 class StepCounter {
     var totalSteps: Int = 0 {
