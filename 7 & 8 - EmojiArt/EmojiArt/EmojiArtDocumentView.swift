@@ -34,7 +34,7 @@ struct EmojiArtDocumentView: View {
                     )
                     .gesture(self.doubleTapToZoom(in: geometry.size))
                     .onTapGesture {
-                        //self.selectedEmojis.removeAll()
+                        self.selectedEmojis.removeAll()
                         print(self.selectedEmojis)
                     }
                     
@@ -45,7 +45,6 @@ struct EmojiArtDocumentView: View {
                             .position(self.position(for: emoji, in: geometry.size))
                             .onTapGesture {
                                 self.selectedEmojis.toggleMatching(emoji)
-                                print(self.selectedEmojis)
                             }
                             .gesture(self.dragEmojis(for: emoji))
                             .shadow(color: self.emojiSelected(emoji) ? .blue : .clear , radius: 10)
@@ -81,7 +80,7 @@ struct EmojiArtDocumentView: View {
     @State var selectedEmojis: Set<EmojiArt.Emoji> = []
     
     private func emojiSelected(_ emoji: EmojiArt.Emoji) -> Bool {
-        selectedEmojis.contains(emoji)
+        selectedEmojis.contains(matching: emoji)
     }
     
     private var zoomScale: CGFloat {
@@ -101,20 +100,17 @@ struct EmojiArtDocumentView: View {
     @GestureState private var emojiOffset: CGSize = .zero
     
     private func dragEmojis(for emoji:EmojiArt.Emoji) -> some Gesture {
-        
-        return DragGesture()
+        DragGesture()
             .updating($emojiOffset) { latestDragGestureValue, emojiOffset, transaction in
                 emojiOffset = latestDragGestureValue.translation / self.zoomScale
             }
             .onEnded { finalDragGestureValue in
                 let distanceDragged = finalDragGestureValue.translation / self.zoomScale
                 for emoji in self.selectedEmojis {
-                    print(emoji)
                     self.document.moveEmoji(emoji, by: distanceDragged)
                 }
             }
     }
-
     
     @State private var steadyStatePanOffset: CGSize = .zero
     @GestureState private var gesturePanOffset: CGSize = .zero

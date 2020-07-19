@@ -19,6 +19,7 @@ extension Collection where Element: Identifiable {
     func contains(matching element: Element) -> Bool {
         self.contains(where: { $0.id == element.id })
     }
+    
 }
 
 extension Data {
@@ -211,17 +212,13 @@ extension UIImage {
     }
 }
 
-extension Set where Element:Identifiable {
+extension Set where Element: Identifiable {
     mutating func toggleMatching(_ emoji: Element) {
         if contains(matching: emoji) {
-            print("REMOVING")
-            print(emoji)
-            remove(emoji)
-            print("REMOVED")
+            let indexOfMatchingEmoji = firstIndex(matching: emoji)
+            remove(at: indexOfMatchingEmoji!)
         } else {
-            print("ADDING")
             insert(emoji)
-            print("ADD")
         }
     }
 }
