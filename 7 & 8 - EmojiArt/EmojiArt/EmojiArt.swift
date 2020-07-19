@@ -10,11 +10,12 @@ import Foundation
 // Don't need Swift UI for Model
 // Model
 
+// When using Codable protocol, all members must be codable
+// Codable ensures JSON usability
 struct EmojiArt: Codable {
     var backgroundURL: URL?
     var emojis = [Emoji]()
     
-    // When using Codable protocol, all members must be codable
     struct Emoji: Identifiable, Codable, Hashable {
         let text: String
         var x: Int      // Offset from the centre
@@ -22,7 +23,7 @@ struct EmojiArt: Codable {
         var size: Int
         let id: Int
         
-        // Cannot create Emoji outside this file
+        // fileprivate - Cannot create Emoji outside this file
         fileprivate init(text: String, x: Int, y: Int, size: Int, id: Int){
             self.text = text
             self.x = x
@@ -46,7 +47,7 @@ struct EmojiArt: Codable {
         }
     }
     
-    init () { }
+    init() { }
     
     private var uniqueEmojiId = 0
     
