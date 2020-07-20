@@ -35,18 +35,18 @@ struct EmojiArtDocumentView: View {
                     .gesture(self.doubleTapToZoom(in: geometry.size))
                     .onTapGesture {
                         self.selectedEmojis.removeAll()
-                        print(self.selectedEmojis)
                     }
                     
                     // Dropped Emojis
                     ForEach(self.document.emojis) { emoji in
                         Text(emoji.text)
-                            .font(animatableWithSize: emoji.fontSize * self.zoomScale)
+                            .font(animatableWithSize: emoji.fontSize * self.zoomScale(for: emoji))
                             .position(self.position(for: emoji, in: geometry.size))
                             .onTapGesture {
                                 self.selectedEmojis.toggleMatching(emoji)
                             }
                             .gesture(self.dragEmojis(for: emoji))
+                            .gesture(self.longPress(for: emoji))
                             .shadow(color: self.emojiSelected(emoji) ? .blue : .clear , radius: 10)
                     }
                 }
@@ -75,38 +75,77 @@ struct EmojiArtDocumentView: View {
     // For Pinching Gesture
     // Use @State because temporary
     @State private var steadyStateZoomScale: CGFloat = 1.0
+    @State private var steadyStateEmojiZoomScale: CGFloat = 1.0
     @GestureState private var gestureZoomScale: CGFloat = 1.0
     
     @State var selectedEmojis: Set<EmojiArt.Emoji> = []
     
+    // Checks whether a specific emoji is selected
     private func emojiSelected(_ emoji: EmojiArt.Emoji) -> Bool {
         selectedEmojis.contains(matching: emoji)
     }
     
+    // Are any emojis selected?
+    private var hasSelection: Bool {
+        !selectedEmojis.isEmpty
+    }
+    
+    private func longPress(for emoji: EmojiArt.Emoji) -> some Gesture {
+        LongPressGesture(minimumDuration: 1)
+            .onEnded { _ in
+                self.document.removeEmoji(emoji)
+        }
+    }
+    
     private var zoomScale: CGFloat {
-        steadyStateZoomScale * gestureZoomScale
+        //steadyStateZoomScale * gestureZoomScale
+        steadyStateZoomScale * (hasSelection ? 1 : gestureZoomScale)
+    }
+    
+    private func zoomScale(for emoji: EmojiArt.Emoji) -> CGFloat {
+        if emojiSelected(emoji) {
+            return steadyStateZoomScale * gestureZoomScale
+        } else {
+            return zoomScale
+        }
     }
     
     private func zoomGesture() -> some Gesture {
         MagnificationGesture()
-            .updating($gestureZoomScale){ latestGestureScale, gestureZoomScale, transaction in
+            .updating($gestureZoomScale, body: { (latestGestureScale, gestureZoomScale, transaction) in
                 gestureZoomScale = latestGestureScale
-            }
+            })
             .onEnded { finalGestureScale in
-                self.steadyStateZoomScale *= finalGestureScale
+                if self.hasSelection {
+                    // zoom selected Emojis
+                    self.selectedEmojis.forEach { emoji in
+                        self.document.scaleEmoji(emoji, by: finalGestureScale)
+                    }
+                } else {
+                    self.steadyStateZoomScale *= finalGestureScale
+                }
             }
     }
     
     @GestureState private var emojiOffset: CGSize = .zero
     
     private func dragEmojis(for emoji:EmojiArt.Emoji) -> some Gesture {
-        DragGesture()
+        // Extra Credit
+        let isEmojiPartOfSelection = self.emojiSelected(emoji)
+        
+        return DragGesture()
             .updating($emojiOffset) { latestDragGestureValue, emojiOffset, transaction in
                 emojiOffset = latestDragGestureValue.translation / self.zoomScale
             }
             .onEnded { finalDragGestureValue in
                 let distanceDragged = finalDragGestureValue.translation / self.zoomScale
-                for emoji in self.selectedEmojis {
+                // if part of Selection, move whole selection
+                if isEmojiPartOfSelection {
+                    for emoji in self.selectedEmojis {
+                        self.document.moveEmoji(emoji, by: distanceDragged)
+                    }
+                // else just move the unselected emoji
+                } else {
                     self.document.moveEmoji(emoji, by: distanceDragged)
                 }
             }
