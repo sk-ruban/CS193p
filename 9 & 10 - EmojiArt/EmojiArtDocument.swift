@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 // ViewModel
 
@@ -15,17 +16,20 @@ class EmojiArtDocument: ObservableObject {
     
     static var palette: String = "🥕🥥🥝🏓🔥🦀🌴"
     
-    @Published private var emojiArt: EmojiArt {
-        // Watches for changes and stores to UserDefaults
-        didSet {
-            UserDefaults.standard.set(emojiArt.json, forKey: EmojiArtDocument.untitled)
-        }
-    }
+    // Watches for changes and stores to UserDefaults
+    @Published private var emojiArt: EmojiArt
     
     private static let untitled = "EmojiArtDocument.Untitled"
     
+    // needs to import Combine
+    private var autosaveCancellable: AnyCancellable?
+    
     init() {
         emojiArt = EmojiArt(json: UserDefaults.standard.data(forKey: EmojiArtDocument.untitled)) ?? EmojiArt()
+        autosaveCancellable = $emojiArt.sink { emojiArt in
+            print("\(emojiArt.json?.utf8 ?? "nil")")
+            UserDefaults.standard.set(emojiArt.json, forKey: EmojiArtDocument.untitled)
+        }
         fetchBackgroundImageData()
     }
     
@@ -59,27 +63,31 @@ class EmojiArtDocument: ObservableObject {
         }
     }
     
-    func setBackgroundURL(_ url: URL?){
+    var backgroundURL : URL? {
         //.imageURL uses extension to grab IMAGE URL from complicated URLs
-        emojiArt.backgroundURL = url?.imageURL
-        fetchBackgroundImageData()
+        get {
+            emojiArt.backgroundURL
+        }
+        set {
+            emojiArt.backgroundURL = newValue?.imageURL
+            fetchBackgroundImageData()
+        }
     }
     
+    private var fetchImageCancellable: AnyCancellable?
     private func fetchBackgroundImageData() {
         backgroundImage = nil
         if let url = self.emojiArt.backgroundURL {
-            // Dispatch to Background Queue
-            DispatchQueue.global(qos: .userInitiated).async {
-                if let imageData = try? Data(contentsOf: url) {
-                    // Execute UI changes ONLY on Main thread
-                    DispatchQueue.main.async {
-                        // Check whether it's the image the user wants to place incase of lag
-                        if url == self.emojiArt.backgroundURL {
-                            self.backgroundImage = UIImage(data: imageData)
-                        }
-                    }
-                }
-            }
+            // Cancel the previous fetch
+            fetchImageCancellable?.cancel()
+            // Assign only work with `never` error
+            fetchImageCancellable = URLSession.shared.dataTaskPublisher(for: url)
+                // Map the data as an Image
+                .map { data, urlResponse in UIImage(data: data) }
+                .receive(on: DispatchQueue.main)
+                // `Never` Error
+                .replaceError(with: nil)
+                .assign(to: \.backgroundImage, on: self)
         }
     }
 }
