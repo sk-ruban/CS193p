@@ -2,7 +2,7 @@
 
 ### Task 1
 
-The code for the Memorize App including this assignment can be found at [link](https://github.com/sk-ruban/CS193p/tree/master/1%20%26%202%20-%20Memorize)
+The code for the Memorize App including this assignment can be found at [link](https://github.com/sk-ruban/CS193p/tree/master/01%20%26%2002%20-%20Memorize)
 
 ### Task 2: Shuffle the Cards
 
@@ -17,7 +17,7 @@ var cards: Array<MemoryGame<String>.Card> {
 
 
 
-### Task 3: width:height of 2:3
+### Task 3: width:height ratio of 2:3
 
 * `.aspectRatio()` modifier
 
