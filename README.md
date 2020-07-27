@@ -24,7 +24,7 @@
 ### Assignments
 || Assignments | My Solutions | Code |
 | --------------- | --------------- | --------------- | --------------- | 
-| :white_check_mark: |[Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a1.pdf)|[Solution 01](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/01%20-%20Intro%20to%20SwiftUI.md)||
+| :white_check_mark: |[Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a1.pdf)|[Solution 01](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%201.md)||
 | :white_check_mark: |[Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a2_0.pdf)|[Solution 02](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%202.md)||
 | :x: |[Assignment 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_3.pdf)|||
 | :white_check_mark: |[Assignment 4](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a4_0.pdf)|[Solution 04]()||
