@@ -24,8 +24,8 @@ var cards: Array<MemoryGame<String>.Card> {
 ```swift
 // View
 HStack {
-		ForEach(viewModel.cards) { card in
-    // ...          
+	ForEach(viewModel.cards) { card in
+    	// ...          
 }
 .aspectRatio(2/3, contentMode: .fit)
 ```
@@ -50,7 +50,7 @@ return MemoryGame<String>(numberOfPairs: Int.random(in: 2...5)) { index in
 ```swift
 // View
 HStack {
-    // ...          
+    	// ...          
 }
 .font(viewModel.cards.count < 5 ? Font.largeTitle : Font.title)
 ```
@@ -65,7 +65,7 @@ HStack {
 ```swift
 // View
 NavigationView{
-  		// ...
+ 	// ...
 }
 .navigationViewStyle(StackNavigationViewStyle())
 ```
