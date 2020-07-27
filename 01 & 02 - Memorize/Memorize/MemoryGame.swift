@@ -10,6 +10,7 @@ import Foundation
 
 // This is the Model
 
+// Declare the generic type within <>
 struct MemoryGame<CardContent> {
     var cards: Array<Card>
     
@@ -27,10 +28,12 @@ struct MemoryGame<CardContent> {
         
     }
     
+    // Refer to Nested Struct by MemoryGame.Card
     struct Card: Identifiable {
         var isFaceUp: Bool = false
         var isMatched: Bool = false
         var content: CardContent
+        // Identifiable for ForEach
         var id: Int
     }
 }

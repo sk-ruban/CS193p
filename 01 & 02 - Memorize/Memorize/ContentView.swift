@@ -11,20 +11,25 @@ import SwiftUI
 // This is the View
 
 struct ContentView: View {
+    // Calls the ViewModel
     var viewModel: EmojiMemoryGame
     
     var body: some View {
-        HStack {
-            ForEach(viewModel.cards) { card in
-                CardView(card: card).onTapGesture {
-                    self.viewModel.choose(card: card)
+        // Navigation View for Assignment 1 Task 6
+        NavigationView {
+            HStack {
+                ForEach(viewModel.cards) { card in
+                    CardView(card: card).onTapGesture {
+                        self.viewModel.choose(card: card)
+                    }
                 }
+                .aspectRatio(2/3, contentMode: .fit)
             }
-            .aspectRatio(2/3, contentMode: .fit)
+            .foregroundColor(Color.orange)
+            .padding()
+            .font(viewModel.cards.count < 5 ? Font.largeTitle : Font.title)
         }
-        .foregroundColor(Color.orange)
-        .padding()
-        .font(viewModel.cards.count < 5 ? Font.largeTitle : Font.title)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

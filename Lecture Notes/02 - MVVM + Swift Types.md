@@ -1,6 +1,8 @@
 # Lecture 2 - MVVM + Swift Type
 ## MVVM
-**MVVM** : Model + View + ViewModel
+* A 'code organising' design paradigm
+
+* **MVVM** : Model + View + ViewModel
 
 ### Model
 
@@ -11,28 +13,27 @@
 * Reflects the model (Stateless, reactive & declared)
 
 * What you see (observes publications)
-  * @ObservedObject
-  * @Binding
-  * @EnvironementObject
-  * .onreceive
+  * `@ObservedObject`
+  * `@Binding`
+  * `@EnvironementObject`
+  * `.onreceive`
 
-### ViewModel: 
+### ViewModel 
 
-* Interpretor of Model 
-
-* Publishes changes
-  * ObservableObject
-  * @Published
-  * .environementObject()
-  * objectWillChange.send()
+* Notices changes in Model & **Publishes changes** to View
+  * `ObservableObject`
+  * `@Published`
+  * `.environementObject()`
+  * `objectWillChange.send()`
+* Processes **Intent** from View using functions within & Modifies the Model
 
 ![MVVM](./Lecture.assets/MVVM.png)
 
 
 
 ## Types
-### Struct & Class
-**Similarities**: Stored, compted var, lets, funcs, inits
+### struct & class
+**Similarities**: Stored & Computed var, lets, funcs, inits
 
 **Differences**:
 
@@ -40,42 +41,60 @@
 
 **Structs**
 
-* Copied when passed, init initalises all vars, mutability must be stated
+* **Copied** when passed 
+* Free init initalises all vars, 
+* Mutability must be stated - var & let
 
 **Classes**
 
-* Passed by pointers,  init initialises no vars, always mutable
-* **Always used for ViewModel**
+* **Referenced** by pointers 
+* Free init initialises no vars - Need to declare variables 
+* Always mutable 
+* **Always used for ViewModel** - Needs to be shared 
 
 ### Generics
 
-* When you dont care about a type (type agnostic) - Eg. data inside Arrays
+* When you *don't care* about a type (**type agnostic**) - Eg. data inside Arrays
 
 ```swift
 struct Array<Element> {
-	…
+	// …
 	func append(_ element: Element) { . . . }
 }
+
 var a = Array<Int>()
 a.append(5)
 ```
 
-* Can have multiple don't care type parameters  Eg. <Element, Foo>
+* Can have multiple *don't care* type parameters  Eg. <Element, Foo>
 
 ### Functions
 
-* Are types too!
+* Are types too
 
 ```swift
-var foo: (Double) -> Void
+var foo: (Double) -> Double
+// foo’s type: function that takes a Double, returns Double
 ```
 
-* foo’s type: function that takes a Double, returns nothing
+
 
 ## Demo 
 
-* Opt-click for documentation
-* Empty Array: `cards = Array<Card>()`
+* *Opt-click* for documentation
+
+* Create an Empty Array: `var cards = Array<Card>()`
+
+* ViewModel is a class to allow multiple Views to share / point to it
+
+* In SceneDelegate.swift create the instance of the ViewModel & initialise the View
+
+  ```swift
+  let game = EmojiMemoryGame()
+  let contentView = ContentView(viewModel: game)
+  ```
+
+* ForEach needs identifiable values
 
 ### House Analogy
 
@@ -83,22 +102,25 @@ var foo: (Double) -> Void
 
 * Problem of rogue view manipulating model
 
-* `private var` - model can only be accessed by the class (closes the door)
+* `private var` - model can only be accessed by the ViewModel (closes the door)
 
-* `private(set)` - class can modify the model but View can still see model
+* `private(set) var` - class can modify the model and View can still see model
 
-* Intents - funcs that allow Views to access model (intercom buttons)
+* **Intents** - funcs that allow Views to access model (intercom buttons)
 
 ### Static Functions
 
+* Removes the need to initialise the class variables inorder to use the function
+* Static functions **belong to the type** (class/struct) and not the instance - Universal for all instances
+
 ```swift
-class AppUtils {
-    static func appUtility() {
+class EmojiMemoryGame {
+  	// Need to use class name to call function
+  	private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
+    static func createMemoryGame() -> MemoryGame<String> {
     }
 }
 ```
-
-* Dont need instance. Access static func as `AppUtils.appUtility()`
 
 ### Class Functions
 
@@ -108,8 +130,8 @@ class AppUtils {
 
 ```swift
 private var model: MemoryGame<String> = MemoryGame<String>(numberOfPairs: 2, cardContentFactory: { (pairIndex: Int) -> String in
-        return “😋”
-    })
+		return “😋”
+})
 ```
 
 can become:

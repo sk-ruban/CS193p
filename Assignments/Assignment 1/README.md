@@ -1,5 +1,9 @@
 # Assignment 1
 
+### Task 1
+
+The code for the Memorize App including this assignment can be found at [link](https://github.com/sk-ruban/CS193p/tree/master/1%20%26%202%20-%20Memorize)
+
 ### Task 2: Shuffle the Cards
 
 * `.shuffled()` modifier
@@ -35,14 +39,13 @@ HStack {
 ```swift
 // ViewModel
 return MemoryGame<String>(numberOfPairs: Int.random(in: 2...5)) { index in
-            return emojis[index]
 ```
 
 
 
 ### Task 5: Font Adjust
 
-* `.font` Modifier with nil-coalescing operator:
+* `.font` Modifier with nil-coalescing operator
 
 ```swift
 // View
@@ -56,8 +59,8 @@ HStack {
 
 ### Task 6: Works in Portrait or Landscape Mode
 
-* For the app to display properly in Landscape Mode on large screen devices.
-* I used the following code in Assignment 2:
+* For the app to display properly in Landscape Mode on large screen devices (iPad Pro)
+* Wrap the HStack in a `NavigationView` and add the style modifier
 
 ```swift
 // View
@@ -71,9 +74,10 @@ NavigationView{
 
 ### Extra Credit: More emojis
 
-* Add in the extra emojis and use the `.shuffled()`modifier to ensure that the first few emojis are not chosen every time.
+* Add in the extra emojis and use the `.shuffled()`modifier to ensure that not only the first few emojis are chosen every time.
 
 ```swift
-let emojis: Array<String> = ["👻","🎃","🕷","🧟‍♂️","🧛🏼‍♀️","☠️","👽","🦹‍♀️","🦇","🌘","⚰️","🔮"]
+// ViewModel
+let emojis: Array<String> = ["👻","🎃","🕷","🧟‍♂️","🧛🏼‍♀️","☠️","👽","🦹‍♀️","🦇","🌘","⚰️","🔮"].shuffled()
 ```
 
