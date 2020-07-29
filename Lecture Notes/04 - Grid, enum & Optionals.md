@@ -3,16 +3,25 @@
 
 ## Demo
 
+### Grid
+
+* `ZStack` / `HStack` etc. uses a ViewBuilder
+* Closure is essentially the last argument which is a function
+
 ### @escaping closure
 
-* Closure is essentially the last argument which is a function
-* `@escaping` closure outlives the function it was passed to
+* `@escaping` closure in an init outlives the initialisation
+* Used for functions that might be called later
 
 ### Group
 
-* Use `Group` when you want to create an if/else case for Views
+* Group is a ViewBuilder just like ZStack
+
+* Use `Group` when you want to create an if/else cases for Views
 
 
+
+* Use `Equatable` protocol to associate types as equal
 
 ## enum
 
@@ -23,7 +32,7 @@
 enum FastFoodMenuItem { 
 		case hamburger(numberOfPatties: Int) // States can have Associated Data
 		case fries(size: FryOrderSize) 
-		case drink(String, ounces: Int) 
+		case drink(String, ounces: Int) // Unnamed first Asscoiated Data
 		case cookie // No Associated Data
 
 		func isIncludedInSpecialOrder(number: Int) -> Bool { 
@@ -42,8 +51,8 @@ let menuItem = FastFoodMenuItem.hamburger(patties: 2)
 
 ### Check an enum’s state 
 
-* Use a switch statement
-* Must handle all cases, else use `default`
+* Use a **switch statement**
+* Must handle all cases, else use `default` or `break`
 * To use Associated Data, prefix with `let` 
   * Variable can have a different name
 
@@ -68,6 +77,7 @@ enum Optional<T> {
 		case none						// Not set
 		case some(<T>)			// Is set 
 }
+
 var hello: String? = nil		// .none
 var hello: String? = "hi"		// .some("hi")
 ```
@@ -79,3 +89,10 @@ if let safehello = hello {
 		// do something else
 }
 ```
+
+* Optional Defaulting with `??` - essentially an if / else clause
+
+```swift
+let y = "foo" ?? "bar" 
+```
+

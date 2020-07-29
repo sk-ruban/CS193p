@@ -1,5 +1,5 @@
 //
-//  EmojiMemoryView.swift
+//  EmojiMemoryGameView.swift
 //  Memorize
 //
 //  Created by SK Ruban on 9/6/20.
@@ -17,7 +17,9 @@ struct EmojiMemoryGameView: View {
         NavigationView{
             VStack {
                 Grid(viewModel.cards) { card in
-                    CardView(card: card).onTapGesture {
+                    CardView(card: card,
+                             gradient: Gradient(colors: [self.viewModel.theme.color, self.viewModel.theme.accentColor]))
+                        .onTapGesture {
                             self.viewModel.choose(card: card)
                     }
                     .padding(5)
@@ -45,6 +47,7 @@ struct EmojiMemoryGameView_Previews: PreviewProvider {
 
 struct CardView: View {
     var card: MemoryGame<String>.Card
+    let gradient: Gradient
     
     var body: some View {
         GeometryReader { geometry in
@@ -52,6 +55,7 @@ struct CardView: View {
         }
     }
     
+    // To reduce writing .self
     func body(for size: CGSize) -> some View {
         ZStack {
             if card.isFaceUp {
@@ -63,7 +67,9 @@ struct CardView: View {
             } else {
                 if !card.isMatched{
                     RoundedRectangle(cornerRadius: cornerRadius)
+                        .fill(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing))
                 }
+                // EmptyView if Matched
             }
         }
         .font(Font.system(size: fontSize(for: size)))

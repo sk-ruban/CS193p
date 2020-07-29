@@ -12,6 +12,7 @@ struct Theme {
     var name: String
     var emojis: [String]
     var color: Color
+    var accentColor: Color
     var noOfPairs: Int?
 }
 
@@ -19,26 +20,32 @@ let themes: [Theme] = [
     Theme(
         name: "Halloween",
         emojis: ["👻","🎃","🕷","🧟‍♂️","🧛🏼‍♀️","☠️","👽","🦹‍♀️","🦇","🌘","⚰️","🔮"],
-        color: .orange),
+        color: .orange,
+        accentColor: .red),
     Theme(
         name: "Flags",
         emojis: ["🇸🇬","🇯🇵","🏴‍☠️","🏳️‍🌈","🇬🇧","🇹🇼","🇺🇸","🇦🇶","🇰🇵","🇭🇰","🇲🇨","🇼🇸"],
         color: .red,
+        accentColor: .blue,
         noOfPairs: 6),
     Theme(
         name: "Animals",
         emojis: ["🦑","🦧","🦃","🦚","🐫","🦉","🦕","🦥","🐸","🐼","🐺","🦈"],
-        color: .green),
+        color: .green,
+        accentColor: .yellow),
     Theme(
         name: "Places",
         emojis: ["🗽","🗿","🗼","🎢","🌋","🏝","🏜","⛩","🕍","🕋","🏯","🏟"],
-        color: .purple),
+        color: .blue,
+        accentColor: .green),
     Theme(
         name: "Sports",
         emojis: ["🤺","🏑","⛷","⚽️","🏀","🪂","🥏","⛳️","🛹","🎣","🏉","🏓"],
-        color: .blue),
+        color: .orange,
+        accentColor: .purple),
     Theme(
         name: "Foods",
         emojis: ["🌮","🍕","🍝","🍱","🍪","🍩","🥨","🥖","🍟","🍙","🍢","🍿"],
-        color: .yellow)
+        color: .yellow,
+        accentColor: .red)
 ]

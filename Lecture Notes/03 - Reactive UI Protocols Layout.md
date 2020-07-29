@@ -3,7 +3,7 @@
 
 ## Demo
 
-* Cmd-click to rename across files
+* *Cmd-click* to rename across files
 * All **arguments** in functions are constants
 * `// TODO`: shows up in bar above for user to come back & edit
 
@@ -15,7 +15,7 @@ For Value Types,
 
   
 
-* For `ObservableObject` Classes, `@Published` **publishes changes** 
+* For `ObservableObject` Classes, `@Published` **publishes changes** in Model to the View
 ```swift
 // View Model
 class EmojiMemoryGame: ObservableObject {
@@ -34,8 +34,9 @@ struct EmojiMemoryGameView: View {
 
 ## Protocols
 
-* Protocol is a “stripped down” struct/class with no storage
+* Protocol is a “stripped down” struct/class with **no storage**
 * Structs / classes can **inherit multiple protocols**
+  * Every protocol's var & func **must** be implemented
 * Protocol is a type
 ```swift
 protocol Moveable {
@@ -51,10 +52,24 @@ struct PortableThing: Moveable {
 
 ### Protocol Extensions
 * Can add implementations to a protocol using an extension to the protocol
+* Can also add extensions to Classes / Structs
 ```swift
 extension Moveable { 
-		func registerWithDMV() { /* implementation here */}
+		func registerWithDMV() { /* implementation here */ }
 } 
+```
+
+### Generics & Protocols
+
+```swift
+protocol Greatness {
+  	func isGreaterThan(other: Self) -> Bool
+  	// Self is the type of thing implementing the protocol
+}
+
+extension Array where Element: Greatness {
+		// ...  
+}
 ```
 
 
@@ -67,5 +82,6 @@ extension Moveable {
 2. Views choose their size
 3. Container Views then position the Views inside of them
 
-* Choice of who to offer space can be overidden with `.layoutPriority`
+* Choice of who offer spaces can be overidden with `.layoutPriority(Any Number > 0)`
 * `GeometryReader` knows how much space is offered to it
+* `.edgesIgnoringSafeArea()` allows drawing in safe areas to increase size of View up to the edges

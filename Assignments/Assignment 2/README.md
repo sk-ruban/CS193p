@@ -1,5 +1,9 @@
 # Assignment 2 
 
+### Task 1 - 2
+
+The code for the Memorize App including this assignment can be found at [link]()
+
 ### Task 3 - 4: New Themes
 
 * Added 6 new themes with a new Themes.swift file
@@ -12,6 +16,7 @@ struct Theme {
     var name: String
     var emojis: [String]
     var color: Color
+  	var accentColor: Color // For Extra Credit 1
     var noOfPairs: Int?
 }
 
@@ -19,14 +24,16 @@ let themes: [Theme] = [
     Theme(					
         name: "Halloween",
         emojis: ["👻","🎃","🕷","🧟‍♂️","🧛🏼‍♀️","☠️","👽","🦹‍♀️","🦇","🌘","⚰️","🔮"],
-        color: .orange),				
- 				// No number of pairs for first theme
+        color: .orange,
+    		accentColor: .red),				
+ 				// No number of pairs for first theme as per requirements
     Theme(
         name: "Flags",
         emojis: ["🇸🇬","🇯🇵","🏴‍☠️","🏳️‍🌈","🇬🇧","🇹🇼","🇺🇸","🇦🇶","🇰🇵","🇭🇰","🇲🇨","🇼🇸"],
         color: .red,
-        noOfPairs: 6),
-    //...
+        noOfPairs: 6,
+    		accentColor: .blue),
+    	// So on and so forth for all 6 themes
 ]
 
 ```
@@ -64,7 +71,7 @@ NavigationView{
            // ...
       }
   		.navigationBarTitle(viewModel.theme.name) 					// Task 7
-      .navigationBarItems(trailing: Button("New Game"){		// Task 8
+      .navigationBarItems(trailing: Button("New Game"){		// Task 6
                 self.viewModel.newGame() })
 }
 ```
@@ -132,6 +139,82 @@ Text("Score: \(viewModel.score)")
 // View
 NavigationView{
   		// ...
-    }
-    .navigationViewStyle(StackNavigationViewStyle())
+}
+.navigationViewStyle(StackNavigationViewStyle())
 ```
+
+### Extra Credit 1: Gradient Theme
+
+* Add a new property for CardView called 'gradient'
+* Send `theme.color` and `theme.accentColor` to CardView as a Gradient
+* Use the .fill modifier to add in a Linear Gradient
+
+```swift
+// View
+Grid(viewModel.cards) { card in
+                    CardView(card: card, 
+                             gradient: Gradient(colors: [self.viewModel.theme.color, self.viewModel.theme.accentColor]))
+                       .onTapGesture { //...
+
+struct CardView: View {
+    var card: MemoryGame<String>.Card
+    let gradient: Gradient  // Add new property
+    // ...
+  	} else {
+    		if !card.isMatched{
+    				RoundedRectangle(cornerRadius: cornerRadius)
+               .fill(LinearGradient(gradient: gradient, startPoint: .topLeading, endPoint: .bottomTrailing)) // Linear Gradient
+                }
+```
+
+### Extra Credit 2: Timed Scoring System
+
+* Add a score multiplier to the `choose` function
+* Add the following code for the Card struct
+
+```swift
+// Model
+
+mutating func choose(card: Card){
+		let scoreMultiplier = Int(max(10 - (card.faceUptime), 1))
+  	// ...
+  	score += 2 * scoreMultiplier
+  
+  
+struct Card: Identifiable {
+    var isFaceUp: Bool = false {
+        // didSet calls after isFaceUp changes
+        didSet {
+            if isFaceUp { startUsingBonusTime() } 
+          	else { stopUsingBonusTime() }
+        }
+    }
+  
+    //...
+
+    var lastFaceUpDate: Date?
+    var pastFaceUpTime: TimeInterval = 0
+
+    var faceUptime: TimeInterval {
+        if let lastFaceUpDate = lastFaceUpDate {
+            return pastFaceUpTime + Date().timeIntervalSince(lastFaceUpDate)
+        } else {
+            return pastFaceUpTime
+        }
+    }
+
+    // called when the card transitions to face up state
+    private mutating func startUsingBonusTime() {
+        if lastFaceUpDate == nil {
+           lastFaceUpDate = Date()
+        }
+    }
+
+    // called when the card goes back face down (or gets matched)
+    private mutating func stopUsingBonusTime() {
+        pastFaceUpTime = faceUptime
+        lastFaceUpDate = nil
+    }
+}
+```
+
