@@ -2,7 +2,7 @@
 
 ### Task 1 - 2
 
-The code for the Memorize App including this assignment can be found at [link]()
+The code for the Memorize App including this assignment can be found at [link](https://github.com/sk-ruban/CS193p/tree/master/03%20%26%2004%20-%20Memorize)
 
 ### Task 3 - 4: New Themes
 
