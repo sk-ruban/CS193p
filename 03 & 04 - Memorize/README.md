@@ -1,11 +1,14 @@
 
-In this folder, you can find the code for Memorize App after Lectures 3 & 4 + Assignment 2. Notes are linked below.
+## Lectures 3 & 4
+In this folder, you can find the code for the Memorize App after Lectures 3 & 4 + Assignment 2. 
 
-### Notes 
+My Notes & Solutions (+ Extra Credit) for the assignment are linked below.
 
-[Lecture 3 Notes](../Lecture Notes/Lecture 3 - Reactive UI Protocols Layout.md)
+### Notes & Assignment
 
-[Lecture 4 Notes](../Lecture Notes/Lecture 4 - Grid, enum & Optionals.md)
+[Lecture 3 Notes](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/03%20-%20Reactive%20UI%20Protocols%20Layout.md)
 
-[Assignment 2 Notes](../Assignments/Assignment 2)
+[Lecture 4 Notes](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/04%20-%20Grid%2C%20enum%20%26%20Optionals.md)
+
+[Assignment 2 Solution](https://github.com/sk-ruban/CS193p/tree/master/Assignments/Assignment%202)
 
