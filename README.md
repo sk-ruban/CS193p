@@ -27,7 +27,7 @@
 || Assignments | My Solutions |
 | --------------- | --------------- | --------------- |
 | :white_check_mark: |[Assignment 1](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a1.pdf)|[Solution 01](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%201/README.md)|
-| :white_check_mark: |[Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a2_0.pdf)|[Solution 02](https://github.com/sk-ruban/CS193p/tree/master/Assignments/Assignment%202)|
+| :white_check_mark: |[Assignment 2](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a2_0.pdf)|[Solution 02](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%202/README.md)|
 | :x: |[Assignment 3](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_3.pdf)||
 | :white_check_mark: |[Assignment 4](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/a4_0.pdf)|[Solution 04]()|
 | :white_check_mark: |[Assignment 5](https://cs193p.sites.stanford.edu/sites/g/files/sbiybj16636/files/media/file/assignment_5.pdf)|[Solution 05](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md)|
