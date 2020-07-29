@@ -2,9 +2,9 @@
 ## Lectures 1 & 2
 In this folder, you can find the code for the Memorize App after Lectures 1 & 2 + Assignment 1. 
 
-My Notes & Solutions (+ Extra Credit) are linked below.
+My Notes & Solutions (+ Extra Credit) for the assignment are linked below.
 
-### Notes 
+### Notes & Assignment
 
 [Lecture 1 Notes](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/01%20-%20Intro%20to%20SwiftUI.md)
 
