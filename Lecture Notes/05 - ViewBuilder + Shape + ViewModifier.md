@@ -2,9 +2,11 @@
 
 
 ## @ViewBuilder
-* Add to funcs to support a list of Views
-* Add to parameters that return a View
+* Add to functions to **support a list of Views**
+* Usually used to build conditional Views with if / else
+* **Mark parameters** that return a View
 ```swift
+// Normally would require Group
 @ViewBuilder
 func front(...){
 		RoundedRectangle(...)
@@ -21,18 +23,23 @@ func front(...){
 * All shapes are Views
 ```swift
 // To create own shape
-func path(in rect: CGRect) -> Path { 
-		return a Path
+struct Pie: Shape {
+  	func path(in rect: CGRect) -> Path { 
+				var p = Path()
+        p.move(to: center)
+      	// ...
+      	return p
+		}
 }
 ```
 * When drawing using angle, 0deg points to the right
-* For coordinates, (0,0) is in the top left
+* For coordinates, (0,0) is in the top left, clockwise is reversed
 
 
 
 ## ViewModifier
 
-* Modifiers call a function called `.modifier(TypeofMod())`
+* Modifiers calls a function - `.aspectRatio() ` calls  `.modifier(AspectModifier())`
 * Apply by using the `ViewModifier` protocol
 ```swift
 struct Cardify: ViewModifier { 
@@ -57,7 +64,7 @@ extension View {
 
 ## Demo
 
-* private(set) means writing is private but reading is public
+* `private(set)` means writing is private but reading is public
 * Use PreviewProvider when possible
 ```swift
 struct EmojiMemoryGameView_Previews: PreviewProvider {
@@ -68,3 +75,5 @@ struct EmojiMemoryGameView_Previews: PreviewProvider {
     }
 }
 ```
+
+* `.opacity()` - makes color more transparent

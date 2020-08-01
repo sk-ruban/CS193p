@@ -11,8 +11,9 @@ import Foundation
 // This is the Model
 
 struct MemoryGame<CardContent> where CardContent: Equatable {
+    // private(set) writing is private but reading is public
     private(set) var cards: Array<Card>
-    var score = 0
+    private(set) var score = 0
     
     private var indexOfTheOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter { cards[$0].isFaceUp }.only }

@@ -38,7 +38,7 @@ struct EmojiMemoryGameView: View {
                 }
             })
         }
-        // To allow for rotation
+        // To allow for rotation in large Devices
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }
@@ -61,7 +61,7 @@ struct CardView: View {
         }
     }
     
-    // function @ViewBuilder
+    // function @ViewBuilder to handle if / else case
     @ViewBuilder
     private func body(for size: CGSize) -> some View {
         if card.isFaceUp || !card.isMatched {
@@ -83,6 +83,7 @@ struct CardView: View {
                 Text(card.content)
                     .font(Font.system(size: fontSize(for: size)))
                     .rotationEffect(Angle.degrees(card.isMatched ? 360 : 0))
+                    // Need to check whether card.isMatched as Animation is reused
                     .animation(card.isMatched ? Animation.linear(duration: 1).repeatForever(autoreverses: false) : .default)
             }
             .cardify(isFaceUp: card.isFaceUp)

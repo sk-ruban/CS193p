@@ -25,12 +25,12 @@ class EmojiMemoryGame: ObservableObject {
         model =  EmojiMemoryGame.createMemoryGame(theme: theme)
     }
     
-    // Mark: Access to the model because its private var
+    // MARK: - Access to the model because its private var
     
     var cards: Array<MemoryGame<String>.Card> { model.cards }
     var score: Int { model.score }
     
-    // Mark: Intent
+    // MARK: - Intent
     
     func choose(card: MemoryGame<String>.Card) {
         model.choose(card: card)
