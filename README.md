@@ -1,4 +1,4 @@
-# CS193p
+# 🍕 CS193p
 
  Stanford CS193p (Developing Apps for iOS) for Spring 2020
 
@@ -6,9 +6,8 @@
 
  My Code, Notes & Assignment Solutions are listed below. You can also find my notes for the readings [here](https://github.com/sk-ruban/CS193p/tree/master/Readings%20Notes).
 
-## Progress
+## 🚧 Progress
 
-### Lectures
 | Lectures | My Notes | My Code | Assignments |
 | --------------- | :-------------: | :-------------: | :-------------: |
 | [1: Intro to SwiftUI](https://www.youtube.com/watch?v=jbtqIBpUG7g) | [Notes 01](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/01%20-%20Intro%20to%20SwiftUI.md) | - | - |
