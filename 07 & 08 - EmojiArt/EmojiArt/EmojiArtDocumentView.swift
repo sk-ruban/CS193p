@@ -15,7 +15,7 @@ struct EmojiArtDocumentView: View {
         VStack {
             ScrollView(.horizontal){
                 HStack {
-                    // map turns String into array of Strings
+                    // map turns String into array of Characters
                     ForEach(EmojiArtDocument.palette.map { String($0) }, id: \.self ) { emoji in
                         Text(emoji)
                             .font(Font.system(size: self.defaultEmojiSize))
@@ -24,6 +24,7 @@ struct EmojiArtDocumentView: View {
                 }
             }
             .padding(.horizontal)
+            
             GeometryReader { geometry in
                 ZStack {
                     // Background Image
@@ -76,6 +77,7 @@ struct EmojiArtDocumentView: View {
     // Use @State because temporary
     @State private var steadyStateZoomScale: CGFloat = 1.0
     @State private var steadyStateEmojiZoomScale: CGFloat = 1.0
+    // When pinching
     @GestureState private var gestureZoomScale: CGFloat = 1.0
     
     @State var selectedEmojis: Set<EmojiArt.Emoji> = []
@@ -112,6 +114,7 @@ struct EmojiArtDocumentView: View {
     
     private func zoomGesture() -> some Gesture {
         MagnificationGesture()
+            // While its changing
             .updating($gestureZoomScale, body: { (latestGestureScale, gestureZoomScale, transaction) in
                 gestureZoomScale = latestGestureScale
             })
@@ -179,6 +182,7 @@ struct EmojiArtDocumentView: View {
     }
     
     private func zoomToFit(_ image: UIImage?, in size: CGSize){
+        // if image exists and it has a size
         if let image = image, image.size.width > 0, image.size.height > 0 {
             let hZoom = size.width / image.size.width
             let vZoom = size.height / image.size.height
@@ -197,7 +201,7 @@ struct EmojiArtDocumentView: View {
     // Drop Image
     private func drop(providers: [NSItemProvider], at location: CGPoint) -> Bool {
         var found = providers.loadFirstObject(ofType: URL.self) { url in
-            print("dropped \(url)")
+            // print("dropped \(url)")
             self.document.setBackgroundURL(url)
         }
         if !found {

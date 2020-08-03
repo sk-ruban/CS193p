@@ -13,11 +13,13 @@ import SwiftUI
 // Need Observable Object for ViewModel
 class EmojiArtDocument: ObservableObject {
     
+    // static as it doesn't depend on the Instance
     static var palette: String = "🥕🥥🥝🏓🔥🦀🌴"
     
     @Published private var emojiArt: EmojiArt {
         // Watches for changes and stores to UserDefaults
         didSet {
+            // print("json = \(emojiArt.json?.utf8 ?? "nil")")
             UserDefaults.standard.set(emojiArt.json, forKey: EmojiArtDocument.untitled)
         }
     }
@@ -29,7 +31,7 @@ class EmojiArtDocument: ObservableObject {
         fetchBackgroundImageData()
     }
     
-    // Published because you want to publish changes to View
+    // Published because changes will redraw the View
     @Published private(set) var backgroundImage: UIImage?
     
     var emojis: [EmojiArt.Emoji] { emojiArt.emojis }

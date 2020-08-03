@@ -7,7 +7,7 @@
 //
 
 import Foundation
-// Don't need Swift UI for Model
+
 // Model
 
 // When using Codable protocol, all members must be codable
@@ -37,7 +37,7 @@ struct EmojiArt: Codable {
         return try? JSONEncoder().encode(self)
     }
     
-    // Failable init
+    // Failable init to Decode
     init?(json: Data?) {
         // if there is JSON, we get a newEmojiArt
         if json != nil, let newEmojiArt = try? JSONDecoder().decode(EmojiArt.self, from: json!){
@@ -51,6 +51,7 @@ struct EmojiArt: Codable {
     
     private var uniqueEmojiId = 0
     
+    // mutating as mutates self
     mutating func addEmoji(_ text: String, x: Int, y: Int, size: Int){
         uniqueEmojiId += 1
         emojis.append(Emoji(text: text, x: x, y: y, size: size, id: uniqueEmojiId))
