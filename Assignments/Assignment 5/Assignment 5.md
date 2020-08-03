@@ -1,5 +1,7 @@
 # Assignment 5
 
+The code for this Assignment can be found [here](https://github.com/sk-ruban/CS193p/tree/master/Assignments/Assignment%205)
+
 ### Task 1: Remove the "Random Number of Cards"
 
 1. Change the `noOfPairs` Optional Type to `Int`
