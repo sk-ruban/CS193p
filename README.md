@@ -1,4 +1,4 @@
-# 🍕 CS193p
+# CS193p
 
 This Repo details my progress for Stanford's CS193p (Developing Apps for iOS) - Spring 2020
 
@@ -18,14 +18,15 @@ My Code, Notes & Assignment Solutions (+ Extra Credit) are all listed in the tab
 | [4: Grid + enum + Optionals](https://www.youtube.com/watch?v=eHEeWzFP6O4)|[Notes 04](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/04%20-%20Grid%2C%20enum%20%26%20Optionals.md)|[Memorize 03 & 04](https://github.com/sk-ruban/CS193p/tree/master/03%20%26%2004%20-%20Memorize)| [Solution 02](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%202/README.md)|
 | [5: ViewBuilder + Shape + ViewModifier](https://www.youtube.com/watch?v=oDKDGCRdSHc)|[Notes 05](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/05%20-%20ViewBuilder%20%2B%20Shape%20%2B%20ViewModifier.md)| - | - |
 | [6: Animation](https://www.youtube.com/watch?v=3krC2c56ceQ)|[Notes 06](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/06%20-%20Animation.md)|[Memorize 05 & 06](https://github.com/sk-ruban/CS193p/tree/master/05%20%26%2006%20-%20Memorize)| Not Done Yet|
-| [7: Multithreading EmojiArt](https://youtu.be/tmx-OwkBWxA)|[Notes 07]()|-| - |
-| [8: Gestures JSON](https://youtu.be/mz-rNLWJ0bk)|||[Solution 04](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md) & [Solution 05](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md)|
+| [7: Multithreading EmojiArt](https://youtu.be/tmx-OwkBWxA)|[Notes 07](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/07%20-%20Multithreading%20EmojiArt.md)|-| - |
+| [8: Gestures JSON](https://youtu.be/mz-rNLWJ0bk)|[Notes 08](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|[EmojiArt 07 & 08](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)|[Solution 04](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%204/README.md) & [Solution 05](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md)|
 | [9: Data Flow](https://youtu.be/0i152oA3T3s)||-| - |
 | [10: Navigation + TextField](https://youtu.be/CKexGQuIO7E)||||
 
 
+### 📸 Screenshots
 
-### Extra Resources
+### 🍕 Extra Resources
 
 https://developer.apple.com/design/human-interface-guidelines/
 
