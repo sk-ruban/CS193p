@@ -2,7 +2,7 @@
 
 ### Task 1
 
-The code for the EmojiArt App including this Assignment can be found at [link](https://github.com/sk-ruban/CS193p/tree/master/03%20%26%2004%20-%20Memorize)
+The code for the EmojiArt App including this Assignment can be found at [link](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)
 
 ### Task 2-5: Selection of Emojis
 
