@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct EmojiArtDocumentChooser: View {
+    // Can be @ObserverdObject too
     @EnvironmentObject var store: EmojiArtDocumentStore
     
     @State private var editMode: EditMode = .inactive
