@@ -19,7 +19,7 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [7: Multithreading EmojiArt](https://youtu.be/tmx-OwkBWxA)|[Notes 07](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/07%20-%20Multithreading%20EmojiArt.md)|-| - |
 | [8: Gestures JSON](https://youtu.be/mz-rNLWJ0bk)|[Notes 08](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|[EmojiArt 07 & 08](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)|[Solution 04](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%204/README.md) & [Solution 05](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md)|
 | [9: Data Flow](https://youtu.be/0i152oA3T3s)|[Notes 09](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/09%20-%20Data%20Flow.md)|-| - |
-| [10: Navigation + TextField](https://youtu.be/CKexGQuIO7E)|[Notes 10](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/10%20-%20Navigation%20%2B%20TextField.md)|[EmojiArt 08 & 10](https://github.com/sk-ruban/CS193p/commit/3bf879c1e4048e3b75b326e0b7126f7485402c20)|Not Done Yet|
+| [10: Navigation + TextField](https://youtu.be/CKexGQuIO7E)|[Notes 10](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/10%20-%20Navigation%20%2B%20TextField.md)|[EmojiArt 09 & 10](https://github.com/sk-ruban/CS193p/tree/master/09%20%26%2010%20-%20EmojiArt)|Not Done Yet|
 
 
 ### 📸 Screenshots
