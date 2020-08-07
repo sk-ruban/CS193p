@@ -20,6 +20,10 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [8: Gestures JSON](https://youtu.be/mz-rNLWJ0bk)|[Notes 08](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|[EmojiArt 07 & 08](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)|[Solution 04](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%204/README.md) & [Solution 05](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md)|
 | [9: Data Flow](https://youtu.be/0i152oA3T3s)|[Notes 09](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|-| - |
 | [10: Navigation + TextField](https://youtu.be/CKexGQuIO7E)|[Notes 10](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|[EmojiArt 08 & 09](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)|Not Done Yet|
+| [11: Picker](https://www.youtube.com/watch?v=fCfC6m7XUew&feature=youtu.be) |[Notes 11](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|[Enroute 11](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)|-|
+| [12: Core Data](https://www.youtube.com/watch?v=yOhyOpXvaec) |[Notes 12](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)|[Enroute 12](https://github.com/sk-ruban/CS193p/tree/master/07%20%26%2008%20-%20EmojiArt)|-|
+|  ||||
+|  ||||
 
 
 ### 📸 Screenshots
