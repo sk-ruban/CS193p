@@ -69,7 +69,9 @@ class EmojiArtDocumentStore: ObservableObject {
     
     private var directory: URL?
     
+    // For File System
     init(directory: URL){
+        
         self.name = directory.lastPathComponent
         self.directory = directory
         do {
