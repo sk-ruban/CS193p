@@ -12,6 +12,8 @@ My Notes & Solutions (+ Extra Credit) for the assignments are linked below.
 
 [Lecture 8 Notes](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/08%20-%20Gestures%20JSON.md)
 
+[Reading Notes](https://github.com/sk-ruban/CS193p/tree/master/Readings%20Notes)
+
 [Assignment 4](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%204/README.md)
 
 [Assignment 5](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%205/Assignment%205.md)

@@ -10,5 +10,7 @@ My Notes & Solutions (+ Extra Credit) for the assignment are linked below.
 
 [Lecture 2 Notes](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/02%20-%20MVVM%20%2B%20Swift%20Types.md)
 
+[Reading Notes](https://github.com/sk-ruban/CS193p/tree/master/Readings%20Notes)
+
 [Assignment 1 Solution](https://github.com/sk-ruban/CS193p/blob/master/Assignments/Assignment%201/README.md)
 

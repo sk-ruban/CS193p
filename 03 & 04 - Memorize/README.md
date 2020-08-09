@@ -10,5 +10,7 @@ My Notes & Solutions (+ Extra Credit) for the assignment are linked below.
 
 [Lecture 4 Notes](https://github.com/sk-ruban/CS193p/blob/master/Lecture%20Notes/04%20-%20Grid%2C%20enum%20%26%20Optionals.md)
 
+[Reading Notes](https://github.com/sk-ruban/CS193p/tree/master/Readings%20Notes)
+
 [Assignment 2 Solution](https://github.com/sk-ruban/CS193p/tree/master/Assignments/Assignment%202)
 
