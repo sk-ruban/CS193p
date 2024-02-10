@@ -10,7 +10,8 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | Lectures | My Notes | My Code | Assignments |
 | --------------- | :-------------: | :-------------: | :-------------: |
 | [1: Getting Started](https://www.youtube.com/watch?v=n1qabtjZ_jg) | - | [Memorize 01 & 02](https://github.com/sk-ruban/CS193p/tree/master/01%20%26%2002%20Memorize) | - |
-| [2: More SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) | - | [Memorize 01 & 02](https://github.com/sk-ruban/CS193p/tree/master/01%20%26%2002%20Memorize) | - |
+| [2: More SwiftUI](https://www.youtube.com/watch?v=sXiD-2XrkKQ) | - | [Memorize 01 & 02](https://github.com/sk-ruban/CS193p/tree/master/01%20%26%2002%20Memorize) | [Assignment 1](https://github.com/sk-ruban/CS193p/tree/master/Assignment%2001) |
+| [3: MMVM](https://www.youtube.com/watch?v=W1ymVx6dmvc) | - | [Memorize 03 & 04](https://github.com/sk-ruban/CS193p/tree/master/03%20%26%2004%20Memorize) | - |
 
 ### 📸 Screenshots
 
