@@ -16,7 +16,7 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [5: Protocols, enum, Optional](https://youtu.be/F1x-H8kEwo8) | - | [Memorize 05](https://github.com/sk-ruban/CS193p/tree/master/05%20Memorize) | [Assignment 2](https://github.com/sk-ruban/CS193p/tree/master/Assignment%2002) |
 
 ### 📸 Screenshots
-[Memorize App - Assignment 2](https://github.com/sk-ruban/CS193p/tree/master/Assignment%2002/screenshot.png)
+<img src="https://raw.githubusercontent.com/sk-ruban/CS193p/master/Assignment%2002/screenshot.png" width=50% height=50%>
 
 ### 🍕 Extra Resources
 1. [Swift Programming Language](https://docs.swift.org/swift-book/documentation/the-swift-programming-language/)
