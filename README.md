@@ -14,6 +14,7 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [3: MMVM](https://www.youtube.com/watch?v=W1ymVx6dmvc) | - | [Memorize 03 & 04](https://github.com/sk-ruban/CS193p/tree/master/03%20%26%2004%20Memorize) | - |
 | [4: Applying MMVM](https://www.youtube.com/watch?v=4CkEVfdqjLw) | - | [Memorize 03 & 04](https://github.com/sk-ruban/CS193p/tree/master/03%20%26%2004%20Memorize) | - |
 | [5: Protocols, enum, Optional](https://youtu.be/F1x-H8kEwo8) | - | [Memorize 05](https://github.com/sk-ruban/CS193p/tree/master/05%20Memorize) | [Assignment 2](https://github.com/sk-ruban/CS193p/tree/master/Assignment%2002) |
+| [6: Layout, @ViewBuilder](https://youtu.be/fYlMD9llu7w) | - | [Memorize 06](https://github.com/sk-ruban/CS193p/tree/master/06%20Memorize) | - |
 
 ### 📸 Screenshots
 <img src="https://raw.githubusercontent.com/sk-ruban/CS193p/master/Assignment%2002/screenshot.png" width=50% height=50%>
