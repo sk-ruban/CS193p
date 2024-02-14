@@ -16,6 +16,7 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [5: Protocols, enum, Optional](https://youtu.be/F1x-H8kEwo8) | - | [Memorize 05](https://github.com/sk-ruban/CS193p/tree/master/05%20Memorize) | [Assignment 2](https://github.com/sk-ruban/CS193p/tree/master/Assignment%2002) |
 | [6: Layout, @ViewBuilder](https://youtu.be/fYlMD9llu7w) | - | [Memorize 06](https://github.com/sk-ruban/CS193p/tree/master/06%20Memorize) | - |
 | [7: Shape, ViewModifier, Constants](https://youtu.be/KR7DXJYhkBw) | - | [Memorize 07](https://github.com/sk-ruban/CS193p/tree/master/07%20Memorize) | - |
+| [8: Animation (Part 1)](https://youtu.be/L7hmw4ISh1A) | - | [Memorize 08](https://github.com/sk-ruban/CS193p/tree/master/08%20Memorize) | - |
 
 ### 📸 Screenshots
 <img src="https://raw.githubusercontent.com/sk-ruban/CS193p/master/Assignment%2002/screenshot.png" width=50% height=50%>
