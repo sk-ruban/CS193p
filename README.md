@@ -17,6 +17,8 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [6: Layout, @ViewBuilder](https://youtu.be/fYlMD9llu7w) | - | [Memorize 06](https://github.com/sk-ruban/CS193p/tree/master/06%20Memorize) | - |
 | [7: Shape, ViewModifier, Constants](https://youtu.be/KR7DXJYhkBw) | - | [Memorize 07](https://github.com/sk-ruban/CS193p/tree/master/07%20Memorize) | - |
 | [8: Animation (Part 1)](https://youtu.be/L7hmw4ISh1A) | - | [Memorize 08](https://github.com/sk-ruban/CS193p/tree/master/08%20Memorize) | - |
+| [9: Animation (Part 2)](https://youtu.be/RCwmYEis5nA) | - | [Memorize 09](https://github.com/sk-ruban/CS193p/tree/master/09%20Memorize) | - |
+| [9: EmojiArt](https://www.youtube.com/watch?v=GmNzu_jL5-o) | - | [EmojiArt 10](https://github.com/sk-ruban/CS193p/tree/master/10%20EmojiArt) | - |
 
 ### 📸 Screenshots
 <img src="https://raw.githubusercontent.com/sk-ruban/CS193p/master/Assignment%2002/screenshot.png" width=50% height=50%>
