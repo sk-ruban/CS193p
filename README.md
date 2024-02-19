@@ -20,6 +20,7 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [9: Animation (Part 2)](https://youtu.be/RCwmYEis5nA) | - | [Memorize 09](https://github.com/sk-ruban/CS193p/tree/master/09%20Memorize) | - |
 | [10: EmojiArt](https://youtu.be/GmNzu_jL5-o) | - | [EmojiArt 10](https://github.com/sk-ruban/CS193p/tree/master/10%20EmojiArt) | - |
 | [11: Gestures, 2nd MVVM](https://youtu.be/w847hVcSYPs) | - | [EmojiArt 11](https://github.com/sk-ruban/CS193p/tree/master/11%20EmojiArt) | - |
+| [12: Persistence, Property Wrappers](https://youtu.be/SiRehcQ6RVE) | - | [EmojiArt 12](https://github.com/sk-ruban/CS193p/tree/master/12%20EmojiArt) | - |
 
 ### 📸 Screenshots
 <img src="https://raw.githubusercontent.com/sk-ruban/CS193p/master/Assignment%2002/screenshot.png" width=50% height=50%>
