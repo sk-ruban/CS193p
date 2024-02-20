@@ -22,6 +22,7 @@ Lectures, videos & corresponding project files from Stanford can be found [here]
 | [11: Gestures, 2nd MVVM](https://youtu.be/w847hVcSYPs) | - | [EmojiArt 11](https://github.com/sk-ruban/CS193p/tree/master/11%20EmojiArt) | - |
 | [12: Persistence, Property Wrappers](https://youtu.be/SiRehcQ6RVE) | - | [EmojiArt 12](https://github.com/sk-ruban/CS193p/tree/master/12%20EmojiArt) | - |
 | [13: Presenting Views, Navigation](https://youtu.be/OEGoIlHHyXw) | - | [EmojiArt 13](https://github.com/sk-ruban/CS193p/tree/master/13%20EmojiArt) | - |
+| [14: Multithreading, Error Handling](https://youtu.be/9gA1_Ipm-yY) | - | [EmojiArt 14](https://github.com/sk-ruban/CS193p/tree/master/14%20EmojiArt) | - |
 
 ### 📸 Screenshots
 <img src="https://raw.githubusercontent.com/sk-ruban/CS193p/master/Assignment%2002/screenshot.png" width=50% height=50%>
