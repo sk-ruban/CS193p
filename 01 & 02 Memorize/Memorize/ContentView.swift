@@ -13,9 +13,8 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            ScrollView {
-                cards
-            }
+            // Allows for user to scroll
+            ScrollView { cards }
             Spacer()
             cardCountAdjusters
         }
@@ -23,6 +22,8 @@ struct ContentView: View {
     }
     
     var cards: some View {
+        // creates a vertically scrollable collection of views
+        // lazy implies that the views are only created when SwiftUI needs to display them
         LazyVGrid(columns: [GridItem(.adaptive(minimum: 120))]) {
             ForEach(0..<cardCount, id: \.self) { index in
                 CardView(content: emojis[index])
@@ -48,6 +49,7 @@ struct ContentView: View {
         }, label: {
             Image(systemName: symbol)
         })
+        // disables button use with conditions
         .disabled(cardCount + offset < 1 || cardCount + offset > emojis.count)
     }
 }
